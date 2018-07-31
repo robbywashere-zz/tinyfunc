@@ -1,32 +1,26 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import { Base, Heading } from 'rebass';
+import styled from 'styled-components';
 
-const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </div>
+const H = styled(Base)`
+  background: ${({ theme })=> theme.palette.primary };
+  margin: 0 auto;
+  padding: 1.45rem 1.0875rem;
+`
+
+const Header = ({ siteTitle, theme }) => (
+  <H is="h1">
+      <Link
+        to="/"
+        style={{
+          color: 'white',
+          textDecoration: 'none',
+        }}
+      >
+        {siteTitle}
+      </Link>
+  </H>
 )
 
 export default Header

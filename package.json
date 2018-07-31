@@ -6,10 +6,11 @@
   "dependencies": {
     "gatsby": "^1.9.277",
     "gatsby-link": "^1.6.46",
+    "gatsby-plugin-google-fonts": "^0.0.4",
     "gatsby-plugin-react-helmet": "^2.0.11",
     "gatsby-plugin-styled-components": "^2.0.11",
     "react-helmet": "^5.2.0",
-    "rebass": "^2.0.0-10",
+    "rebass": "^2.1.0",
     "styled-components": "^3.3.3"
   },
   "keywords": [
@@ -17,6 +18,7 @@
   ],
   "license": "MIT",
   "scripts": {
+    "start":"gatsby develop",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write 'src/**/*.js'",
