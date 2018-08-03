@@ -11,9 +11,20 @@ import styled from 'styled-components';
 
 const Body = styled.div`
   margin: 0 auto;
-  background-color: ${({ theme }) => theme.palette.primary};
   padding: 0px 1.0875rem 1.45rem;
   padding-top: 0;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  h3 {
+    text-decoration: underline;
+  }
+  strong {
+    font-weight: 500;
+  }
+  ul:nth-of-type(n+6) {
+    display: none;
+  }
 `
 
 injectGlobal`
@@ -21,24 +32,15 @@ injectGlobal`
   body { margin: 0; }
 `
 
-
-
 const Layout = ({ children, data }) => (
-  <Provider theme={ theme }>
     <div>
       <Helmet
-        title={data.site.siteMetadata.title}
-        meta={[
-          { name: 'description', content: 'Sample' },
-          { name: 'keywords', content: 'sample, something' },
-        ]}
+        title={data.markdownRemark.frontmatter.title}
       />
-      <Header siteTitle={data.site.siteMetadata.title} />
       <Body>
         {children()}
       </Body>
     </div>
-  </Provider>
 )
 
 Layout.propTypes = {
@@ -48,11 +50,18 @@ Layout.propTypes = {
 export default Layout
 
 export const query = graphql`
-  query SiteTitleQuery {
+  query ResumeSiteTitleQuery {
+
+    markdownRemark {
+      frontmatter {
+        title
+      }
+    }
     site {
       siteMetadata {
         title
       }
     }
+
   }
 `
