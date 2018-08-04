@@ -4,40 +4,60 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-// You can delete this file if you're not using it
-//
-
-const path = require("path");
+const { resolve } = require('path')
 
 exports.createPages = async ({ boundActionCreators, graphql }) => {
-  const { createPage } = boundActionCreators;
+  const { createPage } = boundActionCreators
 
-  const resumeTemplate = path.resolve(`src/templates/resumeTemplate.js`);
+  await pages('posts');
+  await pages('markdown');
 
-  const result = await graphql(`
+  async function pages(type) {
+    const pagesResults = await graphql(`
     {
-      allMarkdownRemark {
+      allFile(filter: { sourceInstanceName: { eq: "${type}-pages" } }) {
         edges {
           node {
-            frontmatter {
-              path
+            childMarkdownRemark {
+              frontmatter {
+                path
+                layout
+                template
+              }
             }
           }
         }
       }
     }
-  `);
+  `)
 
-  if (result.errors) throw result.errors;
+    if (pagesResults.errors) throw pagesResults.errors
 
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    createPage({
-      path: node.frontmatter.path,
-      layout: "resume",
-      component: resumeTemplate,
-      context: {}, // additional data can be passed via context
-    });
-  });
+    pagesResults.data.allFile.edges.forEach(({ node }) => {
+      const { path } = node.childMarkdownRemark.frontmatter
 
+      if (typeof path === 'undefined')
+        throw new Error(
+          'path must defined in frontmatter for node' +
+            JSON.stringify(node, null, 4)
+        )
+      if (path.substring(0, 1) !== '/')
+        throw new Error(
+          'path must be prefixed in frontmatter with "/"' +
+            JSON.stringify(node, null, 4)
+        )
 
-};
+      const {
+        layout,
+        template
+      } = node.childMarkdownRemark.frontmatter
+
+      createPage({
+        path,
+        layout: (layout || type),
+        component: resolve(`src/templates/${template || type}.js`),
+        context: {},
+      })
+    })
+  }
+}
