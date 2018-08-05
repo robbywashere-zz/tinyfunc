@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
 import { injectGlobal } from 'styled-components'
 import Header from '../components/header'
 import { Provider }  from 'rebass';
@@ -32,17 +31,18 @@ injectGlobal`
   body { margin: 0; }
 `
 
-const Layout = ({ children, data }) => (
+const Layout = (props) => {
+  const { children, data } = props;
+  console.log(props);
+
+  return (
     <div>
-      <Helmet
-        title={data.markdownRemark.frontmatter.title}
-      />
       <Body>
         {children()}
       </Body>
     </div>
-)
-
+  )
+}
 Layout.propTypes = {
   children: PropTypes.func,
 }

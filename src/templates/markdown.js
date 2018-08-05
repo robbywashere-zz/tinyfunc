@@ -1,7 +1,7 @@
 import React from "react";
-
 import Helmet from 'react-helmet'
-export default function Template({
+
+export default function MarkdownTemplate({
   data, // this prop will be injected by the GraphQL query below.
 }) {
   const { markdownRemark } = data; // data.markdownRemark holds our post data
@@ -19,7 +19,7 @@ export default function Template({
 }
 
 export const pageQuery = graphql`
-  query Posts($path: String!) {
+  query Markdown($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {

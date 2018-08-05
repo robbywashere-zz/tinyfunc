@@ -49,14 +49,14 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
 
       const {
         layout,
-        template
+        template,
+        title
       } = node.childMarkdownRemark.frontmatter
 
       createPage({
         path,
         layout: (layout || type),
         component: resolve(`src/templates/${template || type}.js`),
-        context: {},
       })
     })
   }

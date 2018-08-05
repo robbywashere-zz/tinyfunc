@@ -9,9 +9,11 @@ template: resume
 
 # Web Application Engineer
 
-robby.polana@gmail.com • github.com/robbywashere
+[robby.polana@gmail.com](mailto:robby.polana@gmail.com) • [github.com/robbywashere](https://github.com/robbywashere) • [view source](https://github.com/robbywashere/tinyfunc/blob/master/src/markdown-pages/resume.md)
 
-**Debugging, refactoring, testing, grepping, console.logging, awking, acking, regularly expressioning, parsing, bashing, piping, patching, migrating, compiling, transpiling, requesting, reviewing, committing, _safely_ rebasing my way through life while resisting the brazen impulse of pushing directly to prod.**
+
+
+**Debugging, refactoring, testing, grepping, console.logging, awking, acking, regularly expressioning, parsing, bashing, piping, patching, migrating, compiling, transpiling, requesting, reviewing, committing and _safely_ rebasing my way through life while resisting the brazen impulse of pushing directly to prod.**
 
 ## Revelavant Skills
 
@@ -29,7 +31,7 @@ robby.polana@gmail.com • github.com/robbywashere
 
 - testing testing testing, unit testing, tdd, git, tcb
 
-- containers/docker, AWS, 12-factor-apps, micro-services, serverless
+- docker, AWS, 12-factor-apps, micro-services, serverless
 
 - human-to-human communication protocols
 
@@ -55,7 +57,7 @@ robby.polana@gmail.com • github.com/robbywashere
 
 - Designed and implemented single-page-app architecture methodology and advanced front-end components to compliment the functionality of the back-end Docker platform product.
 
-- Showed initiative by improving testing and build integrity, which proved crucial in developing a _developer platform_
+- Showed initiative by improving testing and build integrity, which proved critical in developing a _developer platform_
 
 - Developed from the ground up using Go, a complete back-up and restore service for CassandraDB; a NoSQL distributed database.
 
@@ -103,7 +105,7 @@ robby.polana@gmail.com • github.com/robbywashere
 
 - Contributed, refactored and developed the core basis of both the javascript enhanced front-end, while meeting the challenge to maintain a multi-device sharing restful back-end API.
 - Added value by refactoring SQL queries and data integrity of the application and structure of the database.
-- Lead the transition from UI and UX mock-ups and stories to actual implimnentations in JS, CSS and HTML.
+- Lead the transition from UI and UX mock-ups and stories to actual implementations in JS, CSS and HTML.
 
 - **Technologies used: PHP / LAMP Stack, BackboneJS, Javascript and MySQL**
 

@@ -1,18 +1,19 @@
 import React from "react";
+import Helmet from 'react-helmet'
 
-export default function Template({
+export default function ResumeTemplate({
   data, // this prop will be injected by the GraphQL query below.
 }) {
   const { markdownRemark } = data; // data.markdownRemark holds our post data
   const { frontmatter, html } = markdownRemark;
   return (
-    <div className="blog-post-container">
-      <div className="blog-post">
-        <div
-          className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-      </div>
+    <div>
+      <Helmet
+        title={data.markdownRemark.frontmatter.title}
+      />
+      <div
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
     </div>
   );
 }
