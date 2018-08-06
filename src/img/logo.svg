@@ -1,0 +1,8 @@
+<svg width="500" height="500" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg" style="background: #F2DA27;" >
+
+  <style>
+    .heavy { font: bold 30px sans-serif; }
+  </style>
+
+  <text x="2" y="0" class="heavy">func</text>
+</svg>

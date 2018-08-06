@@ -6,6 +6,14 @@
 
 const { resolve } = require('path')
 
+exports.modifyBabelrc = ({ babelrc }) => ({
+  ...babelrc,
+  plugins: babelrc.plugins.concat(
+    ['transform-regenerator'],
+    ['transform-runtime']
+  ),
+})
+
 exports.createPages = async ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators
 
@@ -39,12 +47,12 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
       if (typeof path === 'undefined')
         throw new Error(
           'path must defined in frontmatter for node' +
-            JSON.stringify(node, null, 4)
+          JSON.stringify(node, null, 4)
         )
       if (path.substring(0, 1) !== '/')
         throw new Error(
           'path must be prefixed in frontmatter with "/"' +
-            JSON.stringify(node, null, 4)
+          JSON.stringify(node, null, 4)
         )
 
       const {

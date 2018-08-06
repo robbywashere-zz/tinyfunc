@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "axios": "^0.18.0",
+    "babel-plugin-transform-regenerator": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "chalk": "^2.4.1",
     "finalhandler": "^1.1.1",
     "find-free-port": "^2.0.0",
@@ -25,7 +28,8 @@
     "request": "^2.87.0",
     "request-promise": "^4.2.2",
     "serve-static": "^1.13.2",
-    "styled-components": "^3.3.3"
+    "styled-components": "^3.3.3",
+    "timeago.js": "^3.0.2"
   },
   "keywords": [
     "gatsby"
@@ -38,7 +42,8 @@
     "format": "prettier --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "resume:hot": "nodemon -w src -e \"js ts md jsx\"  scripts/printresumepdf.js",
-    "resume:once": "node scripts/onceresume.js"
+    "resume:once": "node scripts/onceresume.js",
+    "favicon": "qlmanage -t -s 1500 -o ./src/img ./src/img/logo.svg"
   },
   "devDependencies": {
     "prettier": "^1.13.7"

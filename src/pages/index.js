@@ -27,29 +27,38 @@ const blinkAnimation = ({speed=1})=>`animation: ${keyframes`
 `} ${speed}s step-start 0s infinite;`;
 
 
-const CustomHeading = styled(Heading)`
+const SubHeading = styled(Heading)`
+  font-weight: 100;
+`
+const Nav = styled(Banner)`
+  color:  ${({ theme: { colors: { textLight } } }) => textLight};
+  //background: linear-gradient(to bottom,#55efcb 0,#5bcaff 100%);
+  background-image: url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20');
+`;
+const MainHeading = styled(Heading)`
+  font-weight: 100;
+  font-size: 3em;
   &:before {
-    content: "$> ";
+    content: "$> "
   }
   &:after{
-    content: " ▌";
+    content: "  ▌";
     ${blinkAnimation({ speed: 2 })}
   }
 `;
 export default () => (
   <div>
-    <Banner
-      color='white'
+    <Nav
       bg='darken'
-      backgroundImage='https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20'>
+      >
       <Me />
-      <CustomHeading
+      <MainHeading
         f={[ 4, 5, 6, 7 ]}>
         Hello World
-      </CustomHeading>
-    </Banner>
+      </MainHeading>
+    </Nav>
     <Container>
-      <Heading>Lets build something great together...</Heading>
+      <SubHeading color='textDark'><em>Lets build something great together</em></SubHeading>
       <Hackernews>The Next Big Thing</Hackernews>
     </Container>
   </div>

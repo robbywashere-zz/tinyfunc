@@ -11,14 +11,19 @@ import styled from 'styled-components';
 
 const Body = styled.div`
   margin: 0 auto;
-  background-color: ${({ theme }) => theme.palette.primary};
-  padding: 0px 1.0875rem 1.45rem;
   padding-top: 0;
 `
 
 injectGlobal`
   * { box-sizing: border-box; }
-  body { margin: 0; }
+  body {
+    margin: 0;
+  }
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 100;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
 `
 
 
@@ -28,10 +33,7 @@ const Layout = ({ children, data }) => (
     <div>
       <Helmet
         title={data.site.siteMetadata.title}
-        meta={[
-          { name: 'description', content: 'Sample' },
-          { name: 'keywords', content: 'sample, something' },
-        ]}
+        meta={[]}
       />
       <Header siteTitle={data.site.siteMetadata.title} />
       <Body>

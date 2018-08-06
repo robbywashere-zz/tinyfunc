@@ -1,22 +1,24 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import GLink from 'gatsby-link'
 import { Base, Heading } from 'rebass';
 import styled from 'styled-components';
 
 const H = styled(Base)`
-  background: ${({ theme })=> theme.palette.primary };
+  background-color: ${({ theme }) => theme.colors.primary};
   margin: 0 auto;
-  padding: 1.45rem 1.0875rem;
+  font-weight: 100;
+  padding: 0.5em;
+`
+
+const Link = styled(GLink)`
+  text-decoration: none;
+  color: ${({ theme: { colors: { textLight } } }) => textLight};
 `
 
 const Header = ({ siteTitle, theme }) => (
   <H is="h1">
       <Link
         to="/"
-        style={{
-          color: 'white',
-          textDecoration: 'none',
-        }}
       >
         {siteTitle}
       </Link>

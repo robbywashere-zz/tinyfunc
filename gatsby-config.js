@@ -8,7 +8,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`fenix`],
+        fonts: [`fenix`,`roboto`],
       },
     },
     {

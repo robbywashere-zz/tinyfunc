@@ -2,10 +2,10 @@ export default {
   breakpoints: [ '32em', '48em', '64em', '80em' ],
   space: [ 0, 4, 8, 16, 32, 64, 128 ],
   fontSizes: [ 12, 14, 16, 20, 24, 32, 48, 64, 72, 96 ],
-  fontWeights: { normal: 400, bold: 700 },
+  fontWeights: { normal: 200, bold: 400 },
   fonts:
-  { '0': 'Fenix, sans-serif',
-    sans: 'Fenix, sans-serif',
+  { '0':  '"Helvetica Neue", "San Francisco", Helvetica, Arial, sans-serif',
+    sans: '"Helvetica Neue", "San Francisco", Helvetica, Arial, sans-serif',
     mono: '"SF Mono", "Roboto Mono", Menlo, monospace' },
   colors:
   { 
@@ -25,7 +25,11 @@ export default {
     green: '#00ee10',
     teal: '#00ee87',
     cyan: '#00deee',
-    hnOrange: '#ff6600'
+    hnOrange: '#ff6600',
+    textLight: "#FFF",
+    textDark: "#000",
+    primary: "rebeccapurple",
+    secondary: "#67ee00",
   },
   palette: {
     primary: "rebeccapurple",
