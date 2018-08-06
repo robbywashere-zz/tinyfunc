@@ -8,16 +8,16 @@ const url = require('url');
 
 
 if (require.main === module) {
-  printresume({ open: true });
+  printresume({ open: true }).then(()=>process.exit(0))
+
 } 
 
-const SUBSPACE = "_";
 
 async function printresume({ open = false, port = 8000 }){
   const resumeMdPath = path.join(__dirname, '..','src','markdown-pages','resume.md');
   const resumeMdStr = fs.readFileSync(resumeMdPath, 'utf8');
   const { data: { title } } = matter(resumeMdStr);
-  const pdftitle = (SUBSPACE) ? title.replace(/\s/g,SUBSPACE) : title;
+  const pdftitle = title.replace(/\s/g,'_')
   const resumePdfPath = path.join(__dirname, '..','static',`${pdftitle}.pdf`);
   const resumeHTTP = `http://localhost:${port}/resume`;
 
@@ -49,6 +49,7 @@ async function printresume({ open = false, port = 8000 }){
   await browser.close();
 
   if (open) opn(resumePdfPath);
+
 
 }
 

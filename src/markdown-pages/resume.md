@@ -5,11 +5,11 @@ layout: resume
 template: resume
 ---
 
-# Robert Polana
+## Robert Polana
 
 # Web Application Engineer
 
-[robby.polana@gmail.com](mailto:robby.polana@gmail.com) • [github.com/robbywashere](https://github.com/robbywashere) • [view source](https://github.com/robbywashere/tinyfunc/blob/master/src/markdown-pages/resume.md)
+[robby.polana@gmail.com](mailto:robby.polana@gmail.com) • [github.com/robbywashere](https://github.com/robbywashere) • [pdf](https://tinyfunc.com/Robert_Polana_-_Web_Application_Engineer.pdf) • [view source](https://github.com/robbywashere/tinyfunc/blob/master/src/markdown-pages/resume.md)
 
 **Debugging, refactoring, testing, grepping, console.logging, awking, acking, regularly expressioning, parsing, bashing, piping, patching, migrating, compiling, transpiling, requesting, reviewing, committing and _safely_ rebasing my way through life while resisting the brazen impulse of pushing directly to prod.**
 
@@ -32,7 +32,7 @@ template: resume
 
 #### Technical Lead / October 2016 - November 2017
 
-- Mentored, tutored and evangelized new technologies and practices for a modern stack solution to meet enterprise level requirements, such as scalability, access-control, auditing and security.
+- Mentored, tutored and evangelized new technologies and practices for a modern stack solution to meet enterprise level requirements, such as scalability, access control, auditing and security.
 
 - Triaged created and managed issues/tasks with our offshore development team.
 

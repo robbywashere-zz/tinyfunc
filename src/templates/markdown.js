@@ -18,7 +18,7 @@ export default function MarkdownTemplate({
   );
 }
 
-export const pageQuery = graphql`
+  /*export const pageQuery = graphql`
   query Markdown($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
@@ -27,4 +27,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`;*/
