@@ -49,7 +49,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run resume:once && git add . && git commit --amend -C HEAD --no-verify --allow-empty "
+      "pre-commit": "npm run resume:once && git add ./static/*.pdf"
     }
   }
 }

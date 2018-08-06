@@ -5,7 +5,7 @@ layout: resume
 template: resume
 ---
 
-## Robert Polana
+# Robert Polana
 
 # Web Application Engineer
 
