@@ -1,26 +1,19 @@
-# gatsby-starter-default
-The default Gatsby starter.
-
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
+# Tinyfunc
 
 ## Install
 
-Make sure that you have the Gatsby CLI program installed:
-```sh
-npm install --global gatsby-cli
-```
+`npm install` or `yarn install`
 
-And run from your CLI:
-```sh
-gatsby new gatsby-example-site
-```
+## Run
 
-Then you can run it by:
-```sh
-cd gatsby-example-site
-gatsby develop
-```
+`npm start` or `yarn start`
+
+## Commands
+
+Resume Hot Reload: `npm start` and then `npm run resume:hot`
+Resume: `npm run resume:once` and then open it in `./static/<resume title>.pdf`
+
 
 ## Deploy
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/robbywashere/tinyfunc)
