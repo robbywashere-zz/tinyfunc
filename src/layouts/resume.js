@@ -8,6 +8,9 @@ import './index.css'
 
 import styled from 'styled-components';
 
+
+const tcolor = "#F5F5F5";
+
 const Body = styled.div`
   margin: 0 auto;
   padding: 0px 1.0875rem 1.45rem;
@@ -21,8 +24,24 @@ const Body = styled.div`
   strong {
     font-weight: 500;
   }
-  ul:nth-of-type(n+6) {
+  ul:nth-of-type(n+5) {
     display: none;
+  }
+  table {
+    border-collapse: collapse;
+  }
+  td {
+    padding: 0.5em 1em 0.5em 1em;
+
+  }
+  thead {
+    display: none;
+  }
+  tr:nth-child(odd) {
+    background: ${tcolor};
+  }
+  tr:last-child {
+    border-bottom: 2px solid ${tcolor};
   }
 `
 
@@ -31,18 +50,13 @@ injectGlobal`
   body { margin: 0; }
 `
 
-const Layout = (props) => {
-  const { children, data } = props;
-  console.log(props);
-
-  return (
-    <div>
-      <Body>
-        {children()}
-      </Body>
-    </div>
-  )
-}
+const Layout = ({ children, data }) => (
+  <div>
+    <Body>
+      {children()}
+    </Body>
+  </div>
+)
 Layout.propTypes = {
   children: PropTypes.func,
 }

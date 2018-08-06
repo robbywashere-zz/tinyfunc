@@ -11,29 +11,20 @@ template: resume
 
 [robby.polana@gmail.com](mailto:robby.polana@gmail.com) • [github.com/robbywashere](https://github.com/robbywashere) • [view source](https://github.com/robbywashere/tinyfunc/blob/master/src/markdown-pages/resume.md)
 
-
-
 **Debugging, refactoring, testing, grepping, console.logging, awking, acking, regularly expressioning, parsing, bashing, piping, patching, migrating, compiling, transpiling, requesting, reviewing, committing and _safely_ rebasing my way through life while resisting the brazen impulse of pushing directly to prod.**
 
-## Revelavant Skills
+## Skills
 
-- NodeJS + Express, Ruby on Rails, Django
-
-- Javascript, TypeScript, Ruby, Python, Go
-
-- ReactJS, AngularJS, d3, semantic-ui, bootstrap
-
-- jsx, jss, styled-components, sass, css
-
-- GraphQL, Redux, REST, oauth + jwt + sessions, single-page-app architecture
-
-- PostgreSQL, MySQL, ORMs, active-record, <small>NoSQL</small>
-
-- testing testing testing, unit testing, tdd, git, tcb
-
-- docker, AWS, 12-factor-apps, micro-services, serverless
-
-- human-to-human communication protocols
+|                |                  |               |                   |                           |                              |
+| -------------- | ---------------- | ------------- | ----------------- | ------------------------- | ---------------------------- |
+| **Languages:** | Javascript       | TypeScript    | Ruby              | Python                    | Go                           |
+| **Data:**      | PostgreSQL       | MySQL         | ORMs              | active-record             | NoSQL                        |
+| **Deploy:**    | docker           | AWS           | 12-factor-apps    | micro-services            | serverless                   |
+| **Style:**     | jsx              | jss           | styled-components | sass                      | css                          |
+| **State:**     | GraphQL          | Redux         | REST              | oauth + jwt + sessions    | single-page-app architecture |
+| **Workflow:**  | tdd              | git           | tcb               | testing, testing, testing |
+| **Front End:** | ReactJS          | AngularJS     | d3                | semantic-ui               | bootstrap                    |
+| **Back End:**  | NodeJS + Express | Ruby on Rails | Django            |                           |
 
 ## Experience
 
@@ -65,7 +56,7 @@ template: resume
 
 ### Mimir Health Intelligence
 
-#### Senior Software Engineer / November 2014 - Febuary 2015
+#### Senior Software Engineer / November 2014 - February 2015
 
 - Solely developed and deployed the full stack of a MVP (minimum viable product) to a big data and analytics visualization service.
 
@@ -97,9 +88,9 @@ template: resume
 
 - Lead the transition from an existing jQuery heavy project to a more debuggable, extendable, and maintainable codebase
 
-- Authored a highly customized data visualization library foundationally built on d3js to suite the contemporary design of a 2.0 version of the platform.
+- Authored a highly customized data visualization library built using d3 to suite the contemporary design of a 2.0 version of the platform.
 
-- **Technologies used: NodeJS, BackboneJS + Marionette, D3js, Requirejs/AMD**
+- **Technologies used: NodeJS, BackboneJS + Marionette, d3, Requirejs/AMD**
 
 #### Cooking Planit - Web Application Engineer / April 2012 - July 2012
 
@@ -113,7 +104,7 @@ template: resume
 
 - Solely authored a multi-node job scheduler and service to consolidate and process application usage data for client billing.
 - Utilized test driven development for crucial function as client-billing and usage statistics.
-- Designed and implimented a full stack client facing admin dashboard and data visualization components for service usage statistics.
+- Designed and implemented a full stack client facing admin dashboard and data visualization components for service usage statistics.
 
 - **Technologies used: Postgres, Python, Django, Java and Javascript**
 
