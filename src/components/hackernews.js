@@ -11,7 +11,6 @@ import { lighten } from 'polished';
 import url from 'url';
 
 
-
 const tcolor = (name)=>({ theme: { colors }})=>colors[name];
 
 const lightenUp = (amt)=>(colorFn)=>(props)=>lighten(amt,colorFn(props));
@@ -45,7 +44,8 @@ const Container = styled.div`
 const Article = styled.article``;
 
 const StoryTitle = styled.div`
-  color: ${tcolor('black')};
+  color: ${ ({ rank })=> (rank>1) ? 'gray': 'black' }
+  font-size: ${ ({ rank })=> (rank>1) ? '1em': '1.5em' }
 `;
 
 
@@ -64,13 +64,14 @@ const VArrow = styled.img.attrs({
   padding: 0 3px 0 3px;
 `
 
+
 const Story = ({ title, score, host, age, rank, time, id, descendants, by })=>{
   return (
     <div>
-      <StoryTitle>{ rank }.
+      <StoryTitle rank={ rank }>
         <VArrow />
         { title }
-      <small> ({ host}) </small>
+        <small> ({ host}) </small>
       </StoryTitle>
       <StorySub> 
         { `${score} points by ${by} ${age} | hide | ${descendants} comments ` }
@@ -79,6 +80,7 @@ const Story = ({ title, score, host, age, rank, time, id, descendants, by })=>{
     </div>
   )
 }
+
 
 
 const withHNStories = lifecycle({
@@ -101,19 +103,19 @@ const withHNStories = lifecycle({
 });
 
 
-const Stories = withHNStories(({ stories }) =>(
-  <div>
-    { stories.map((story,i) => <Story key={ i } rank={ i+1 } { ...story }/> ) }
-  </div>
+const Stories = withHNStories(({ stories, myStory = [] }) =>(
+    <div>
+    { [myStory, ...stories].map((story,i) => <Story key={ i } rank={ i+1 } { ...story }/> ) }
+      </div>
 ));
 
 
 
-const Hackernews = ({ children })=>{
+const Hackernews = ({ children, myStory })=>{
   return (
     <Container>
       <HNHeading>{ children }</HNHeading>
-      <Stories />
+      <Stories myStory={ myStory } />
     </Container>
 
   )
