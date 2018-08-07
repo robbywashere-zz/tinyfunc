@@ -1,3 +1,4 @@
+
 export default { 
   breakpoints: [ '32em', '48em', '64em', '80em' ],
   space: [ 0, 4, 8, 16, 32, 64, 128 ],
@@ -26,6 +27,7 @@ export default {
     teal: '#00ee87',
     cyan: '#00deee',
     hnOrange: '#ff6600',
+    hnBeige: '#f6f6ef',
     textLight: "#FFF",
     textDark: "#000",
     primary: "rebeccapurple",
