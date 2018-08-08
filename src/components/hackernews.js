@@ -5,10 +5,11 @@ import styled from 'styled-components';
 import { themeGet, bg, color } from 'styled-system';
 import axios from 'axios';
 import timeago from 'timeago.js';
-import { lifecycle, withState } from 'recompose';
+import { lifecycle, withProps, mapProps, compose, withState } from 'recompose';
 import voteArrow from '../img/grayarrow.gif';
 import { lighten } from 'polished';
 import url from 'url';
+import STORIES from './stories-fixture.json';
 
 
 const tcolor = (name)=>({ theme: { colors }})=>colors[name];
@@ -36,24 +37,13 @@ const HNHeading = styled.h3`
   }
 `;
 
-const Container = styled.div`
-  width: 100%;
-  background-color: ${tcolor('hnBeige')};
-`
-
-const Article = styled.article``;
-
-const StoryTitle = styled.div`
-  color: ${ ({ rank })=> (rank>1) ? 'gray': 'black' }
-  font-size: ${ ({ rank })=> (rank>1) ? '1em': '1.5em' }
-`;
-
-
 const StorySub = styled.div`
   padding: 5px 5px 5px 0;
   font-size: 0.75em;
   color: ${lightenUp(0.5)(tcolor('black'))};
 `;
+
+
 
 
 const VArrow = styled.img.attrs({
@@ -64,33 +54,37 @@ const VArrow = styled.img.attrs({
   padding: 0 3px 0 3px;
 `
 
+const StoryRanked = styled.div` 
+  color: black;
+  font-size: 1.5em;
+  &:nth-child(n+2){
+    color: gray;
+    font-size: 1em;
+  }
+`
+const Story = ({ title, score, host, age, rank, time, id, descendants, by })=>(
+  <StoryRanked>
+    { rank }.
+    <VArrow />
+    { title }
+    <small> ({ host}) </small>
+    <StorySub> 
+      { `${score} points by ${by} ${age} | hide | ${descendants} comments ` }
+    </StorySub>
+  </StoryRanked>
+)
 
-const Story = ({ title, score, host, age, rank, time, id, descendants, by })=>{
-  return (
-    <div>
-      <StoryTitle rank={ rank }>
-        <VArrow />
-        { title }
-        <small> ({ host}) </small>
-      </StoryTitle>
-      <StorySub> 
-        { `${score} points by ${by} ${age} | hide | ${descendants} comments ` }
-      </StorySub>
-      <span> </span>
-    </div>
-  )
-}
 
 
 
 const withHNStories = lifecycle({
   state: { stories: [] },
   async componentDidMount(){
+    this.setState({ stories: STORIES });
+    return;
     const hnapi = 'https://hacker-news.firebaseio.com/v0/';
-    const { data } = await axios.get(`${hnapi}topstories.json`);
-    data.length = 10;
-
-    const stories = (await Promise.all(data.map(id => axios.get(`${hnapi}item/${id}.json`).then(r=>r.data)))).map(story => {
+    const storyIds = await axios.get(`${hnapi}topstories.json`).then(({ data })=>data.slice(0,10))
+    const stories = (await Promise.all(storyIds.map(id => axios.get(`${hnapi}item/${id}.json`).then(r=>r.data)))).map(story => {
       const { time, url: storyUrl  } = story;
       const now = new Date().getTime();
       story.age = timeago(now).format(time * 1000);
@@ -103,20 +97,36 @@ const withHNStories = lifecycle({
 });
 
 
-const Stories = withHNStories(({ stories, myStory = [] }) =>(
-    <div>
-    { [myStory, ...stories].map((story,i) => <Story key={ i } rank={ i+1 } { ...story }/> ) }
-      </div>
-));
+const StoriesList = ({ stories }) => 
+  stories.map((story,i) => 
+    <Story key={ i } rank={ i+1 } { ...story }/> 
+  )
+
+const withMyStory = mapProps(({ myStory, stories }) => 
+  ({ stories: [ myStory, ...stories ] }))(StoriesList);
 
 
+const MyStories = withHNStories(withMyStory);
+
+
+const StoriesContainer = styled.div`
+  padding: 0 1em 0 1em;
+`;
+
+
+const HNContainer = styled.div`
+  width: 100%;
+  background-color: ${tcolor('hnBeige')};
+`
 
 const Hackernews = ({ children, myStory })=>{
   return (
-    <Container>
+    <HNContainer>
       <HNHeading>{ children }</HNHeading>
-      <Stories myStory={ myStory } />
-    </Container>
+      <StoriesContainer>
+        <MyStories myStory={ myStory } />
+      </StoriesContainer>
+    </HNContainer>
 
   )
 }

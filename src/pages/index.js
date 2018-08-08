@@ -46,15 +46,6 @@ const MainHeading = styled(Heading)`
     ${blinkAnimation({ speed: 2 })}
   }
 `;
-const myStory = { 
-  title: 'The greatest thing of all time', 
-  score: 1337, 
-  host: 'nextbigthing.com', 
-  age: '1 hour ago',
-  time: Date.now(), 
-  descendants: 365, 
-  by: 'robbywashere'
-}
 export default () => (
   <div>
     <Nav
@@ -68,8 +59,16 @@ export default () => (
     </Nav>
     <Container>
       <SubHeading color='textDark'><em>Lets build something great together</em></SubHeading>
-      <Hackernews myStory={ myStory } >The Next Big Thing</Hackernews>
-    </Container>
+      <Hackernews myStory={{
+        title: 'The greatest thing of all time', 
+        score: 1337, 
+        host: 'nextbigthing.com', 
+        age: '1 hour ago',
+        time: Date.now(), 
+        descendants: 365, 
+        by: 'robbywashere'
+      }}>The Next Big Thing</Hackernews>
+  </Container>
   </div>
 );
 
