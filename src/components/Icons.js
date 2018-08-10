@@ -49,18 +49,6 @@ const Text = styled.div`
   ${fontSize}
 `
 
-export const AnyIcon = ({ 
-  url,
-  color='black', 
-  fontSize= '16px', 
-  size = '100px',
-  iconSize = '70%',
-  text='Github',
-  children
-})=>(
-
-)
-
 export const GithubIcon = ({ 
   url,
   color='black', 
@@ -69,7 +57,6 @@ export const GithubIcon = ({
   iconSize = '70%',
   text='Github',
 })=>(
-  <AnyIcon>{( )=> }</AnyIcon>
   <Square iconSize={ iconSize } size={ size }>
     <Github/>
     <Text fontSize={fontSize}>{ text }</Text>
