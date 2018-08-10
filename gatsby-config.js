@@ -7,12 +7,6 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-react-next',
     {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`fenix`,`roboto`],
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/posts`,

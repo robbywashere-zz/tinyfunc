@@ -5,9 +5,9 @@ export default {
   fontSizes: [ 12, 14, 16, 20, 24, 32, 48, 64, 72, 96 ],
   fontWeights: { normal: 200, bold: 400 },
   fonts:
-  { '0':  '"Helvetica Neue", "San Francisco", Helvetica, Arial, sans-serif',
+  { 
     sans: '"Helvetica Neue", "San Francisco", Helvetica, Arial, sans-serif',
-    mono: '"SF Mono", "Roboto Mono", Menlo, monospace' },
+    mono: '"SF Mono", Menlo, monospace' },
   colors:
   { 
     black: '#000',

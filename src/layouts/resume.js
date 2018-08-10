@@ -4,7 +4,9 @@ import { injectGlobal } from 'styled-components'
 import Header from '../components/header'
 import { Provider }  from 'rebass';
 import theme from '../theme';
-import './index.css'
+import '../styles/global';
+
+//import './index.css'
 
 import styled from 'styled-components';
 
@@ -17,7 +19,6 @@ const Body = styled.div`
   margin: 0 auto;
   padding: 0px 1.0875rem 1.45rem;
   padding-top: 0;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 1em;
   font-weight: 300;
   h3 {
@@ -51,23 +52,17 @@ const Body = styled.div`
   }
 `
 
-injectGlobal`
-  * { box-sizing: border-box; }
-  body { margin: 0; }
-`
+export default ({ children, data }) => (
 
-const Layout = ({ children, data }) => (
-  <div>
-    <Body>
-      {children()}
-    </Body>
-  </div>
+  <Provider theme={ theme }>
+    <div>
+      <Body>
+        {children()}
+      </Body>
+    </div>
+  </Provider>
 )
-Layout.propTypes = {
-  children: PropTypes.func,
-}
 
-export default Layout
 
 export const query = graphql`
   query ResumeSiteTitleQuery {
