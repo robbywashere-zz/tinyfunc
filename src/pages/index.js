@@ -1,8 +1,8 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import { Box, Avatar, Banner, Heading } from "rebass";
+import { Box, Flex, Avatar, Banner, Heading } from "rebass";
 import { fontSize, themeGet } from "styled-system";
-import { CommentIconLocal, PaperclipIconLocal, PhoneIcon, GithubIcon } from "../components/Icons";
+import { CommentIconLocal, PaperclipIconLocal, CodeIconLocal, PhoneIcon, GithubIcon } from "../components/Icons";
 import media from '../styles/media';
 
 const Me = Avatar.extend``;
@@ -24,7 +24,7 @@ const Container = Banner.extend`
   min-height: 650px;
   ${media.lessThan('small')`
     min-width: 320px;
-    min-height: 750px;
+    min-height: 865px;
   `}
 
   left: 0;
@@ -62,6 +62,26 @@ const IconGroup = styled.div`
 
 `;
 
+/*
+      <IconsContainer>
+        <IconGroup>
+          <GithubIcon bg={themeGet('gradients.grayish')} to='https://github.com/robbywashere' text='Github'/>
+          <PhoneIcon bg={themeGet('gradients.pinkish')} to='https://calendly.com/robby' text='Appointment' fontSize='15px'/>
+        </IconGroup>
+        <IconGroup>
+          <PaperclipIconLocal bg={themeGet('gradients.blueish')} to='/resume' text='Resume'/>
+          <CommentIconLocal bg={themeGet('gradients.greenish')} to='/contact' text='Contact'/>
+        </IconGroup>
+        <IconGroup >
+          <CodeIconLocal bg={themeGet('gradients.peachish')} to='/blog' text='Code Blog'/>
+        </IconGroup>
+      </IconsContainer>
+      */
+
+const SpecialIconGroup = IconGroup.extend`
+  ${media.lessThan('medium')` text-align: left; width: 240px; `}
+`
+
 export default () => (
   <div>
     <Container>
@@ -73,13 +93,17 @@ export default () => (
       </MainHeading>
       <IconsContainer>
         <IconGroup>
-          <GithubIcon bg={themeGet('gradients.grayish')} to='https://github.com/robbywashere'/>
+          <GithubIcon bg={themeGet('gradients.grayish')} to='https://github.com/robbywashere' text='Github'/>
           <PhoneIcon bg={themeGet('gradients.pinkish')} to='https://calendly.com/robby' text='Appointment' fontSize='15px'/>
         </IconGroup>
         <IconGroup>
-          <PaperclipIconLocal bg={themeGet('gradients.blueish')} to='/resume' text={'Resume'}/>
-          <CommentIconLocal bg={themeGet('gradients.greenish')} to='/contact' text={'Contact'}/>
+          <PaperclipIconLocal bg={themeGet('gradients.blueish')} to='/resume' text='Resume'/>
+          <CommentIconLocal bg={themeGet('gradients.greenish')} to='/contact' text='Contact'/>
         </IconGroup>
+        <SpecialIconGroup>
+          <CodeIconLocal 
+            bg={themeGet('gradients.peachish')} to='/blog' text='Code Blog'/>
+        </SpecialIconGroup>
       </IconsContainer>
     </Container>
   </div>

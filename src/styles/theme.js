@@ -42,7 +42,8 @@ export default {
     grayish:'linear-gradient(to bottom,#dbdbdb 0,#4b4b4b 100%)',
     blueish:'linear-gradient(to top,#1d77ef 0,#81f3fd 100%)',
     greenish:'linear-gradient(to bottom,#b6f9a8 0,#0cd318 100%)',
-    cyanish:'linear-gradient(to bottom,#00ffc3 0,#0ab0ff 100%)'
+    cyanish:'linear-gradient(to bottom,#00ffc3 0,#0ab0ff 100%)',
+    peachish: 'linear-gradient(to bottom,#e3e2b1 0,#cf53af 100%)'
   },
   radii: [ 0, 2, 4 ],
   shadows:

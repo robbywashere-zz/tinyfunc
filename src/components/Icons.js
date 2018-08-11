@@ -10,6 +10,7 @@ import { Github } from 'styled-icons/fa-brands/Github.cjs';
 import { Phone } from 'styled-icons/fa-solid/Phone.cjs';
 import { Paperclip } from 'styled-icons/fa-solid/Paperclip.cjs'
 import { Comment } from 'styled-icons/fa-solid/Comment.cjs'
+import { Code } from 'styled-icons/fa-solid/Code.cjs'
 
 import GLink from 'gatsby-link';
 
@@ -104,5 +105,9 @@ export const PhoneIconLocal = IcoFactory(Phone, GSquare);
 export const CommentIcon = ()=> IcoFactory(Comment);
 
 export const CommentIconLocal = IcoFactory(Comment, GSquare);
+
+export const CodeIcon = IcoFactory(Code);
+
+export const CodeIconLocal = IcoFactory(Code, GSquare);
 
 
