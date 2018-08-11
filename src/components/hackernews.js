@@ -10,9 +10,10 @@ import voteArrow from '../img/grayarrow.gif';
 import { lighten } from 'polished';
 import url from 'url';
 import STORIES from './stories-fixture.json';
+import g from '../lib/get';
+import tcolor from '../lib/tcolor';
 
 
-const tcolor = (name)=>({ theme: { colors }})=>colors[name];
 
 const lightenUp = (amt)=>(colorFn)=>(props)=>lighten(amt,colorFn(props));
 
