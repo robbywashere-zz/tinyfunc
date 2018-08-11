@@ -1,4 +1,4 @@
 #!/bin/bash
-if [[ $(git diff --name-only -- ../src/markdown-pages/resume.md |  wc -l) -gt 0 ]]; then
-  npm run resume:once && git add ../static/*.pdf
+if [[ $(git diff --name-only -- ./src/markdown-pages/resume.md |  wc -l) -gt 0 ]]; then
+  npm run resume:once && git add ./static/*.pdf
 fi
