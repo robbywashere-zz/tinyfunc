@@ -37,6 +37,13 @@ export default {
     primary: "rebeccapurple",
     secondary: "#67ee00",
   },
+  gradients: {
+    pinkish:'linear-gradient(to bottom,#fb8ad4 0,#9221ff 100%)',
+    grayish:'linear-gradient(to bottom,#dbdbdb 0,#4b4b4b 100%)',
+    blueish:'linear-gradient(to top,#1d77ef 0,#81f3fd 100%)',
+    greenish:'linear-gradient(to bottom,#b6f9a8 0,#0cd318 100%)',
+    cyanish:'linear-gradient(to bottom,#00ffc3 0,#0ab0ff 100%)'
+  },
   radii: [ 0, 2, 4 ],
   shadows:
   [ 'none',

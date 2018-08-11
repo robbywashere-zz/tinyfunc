@@ -1,8 +1,8 @@
 ---
 path: /testing
 layout: resume
-template: resume
-title: testing 123
+template: main 
+title: Hello World 
 ---
 
-# YO DAWG WHAT UP
+# Hello World 

@@ -13,79 +13,78 @@ const tcolor = "#F5F5F5";
 
 
 
-const horizNav = 
-  `ul:first-of-type {  
-        margin-left: 0;
-        padding-left: 0;
-           & > li {
-              display: inline-block;
-              &:nth-child(n+2) { 
-                margin-left: 2em;
-              }
-           }
-      }`;
+const horizNav = `
+ul:first-of-type {  
+  margin-left: 0;
+  padding-left: 0;
+     & > li {
+        display: inline-block;
+        &:nth-child(n+2) { 
+          margin-left: 2em;
+        }
+     }
+}`;
 
 const Body = styled.div`
+//Responsive 'Nav' 
 
-  //Responsive 'Nav' 
-  
-  ${media.greaterThan('medium')`${horizNav}`}
+${media.greaterThan('medium')`${horizNav}`}
 
-  @media print {
-    ${horizNav}
-  }
+@media print {
+  ${horizNav}
+}
 
-  -webkit-print-color-adjust: exact;
-  margin: 0 auto;
-  padding: 0px 1.0875rem 1.45rem;
-  padding-top: 0;
-  font-size: 1em;
-  font-weight: lighter;
+-webkit-print-color-adjust: exact;
+margin: 0 auto;
+padding: 0px 1.0875rem 1.45rem;
+padding-top: 0;
+font-size: 1em;
+font-weight: lighter;
 
-  // Hide early experience
-  ul:nth-of-type(n+6) {
-    display: none;
-  }
+// Hide early experience
+ul:nth-of-type(n+6) {
+  display: none;
+}
 
-  h3 {
-    text-decoration: underline;
-  }
-  strong {
-    font-weight: 500;
-  }
-  strong {
-    font-weight: bold;
-  }
+h3 {
+  text-decoration: underline;
+}
+strong {
+  font-weight: 500;
+}
+strong {
+  font-weight: bold;
+}
 
-  //skills table
-  table {
-    border-collapse: collapse;
-  }
-  td {
-    padding: 0.5em 1em 0.5em 1em;
-      ${media.lessThan('medium')`
-        @media screen {
-          display: inline-block;
-          padding: 0.25em 0 0.25em 0;
-          &:after {
-            content: ",";
-          }
-          &:first-of-type:after {
-            content: "";
-          }
-          &:last-of-type:after {
-            content: "";
-          }
+//skills table
+table {
+  border-collapse: collapse;
+}
+td {
+  padding: 0.5em 1em 0.5em 1em;
+    ${media.lessThan('medium')`
+      @media screen {
+        display: inline-block;
+        padding: 0.25em 0 0.25em 0;
+        &:after {
+          content: ",";
         }
-      `}
-    }
+        &:first-of-type:after {
+          content: "";
+        }
+        &:last-of-type:after {
+          content: "";
+        }
+      }
+    `}
   }
-  tr:nth-child(odd) {
-    background: ${tcolor};
-  }
-  tr:last-child {
-    border-bottom: 5px solid ${tcolor};
-  }
+}
+tr:nth-child(odd) {
+  background: ${tcolor};
+}
+tr:last-child {
+  border-bottom: 5px solid ${tcolor};
+}
 `
 
 export default ({ children, data }) => (

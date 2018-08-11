@@ -1,7 +1,10 @@
 import { injectGlobal } from 'styled-components'
-//import './reset';
+import { g } from '../lib/utils';
+import theme from '../styles/theme';
 injectGlobal`
   * { box-sizing: border-box; }
+  html {
+  }
   body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
