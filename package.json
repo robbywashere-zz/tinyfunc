@@ -65,7 +65,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run resume:once && git add ./static/*.pdf"
+      "pre-commit": "./scripts/resumehook"
     }
   }
 }
