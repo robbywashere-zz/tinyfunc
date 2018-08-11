@@ -2,7 +2,7 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import { Box, Avatar, Banner, Heading } from "rebass";
 import { fontSize } from "styled-system";
-import { CommentIcon, PaperclipIcon, PhoneIcon, GithubIcon } from "../components/Icons";
+import { CommentIconLocal, PaperclipIconLocal, PhoneIcon, GithubIcon } from "../components/Icons";
 import g from '../lib/get';
 
 const DEFAULT_SRC = "https://www.gravatar.com/avatar/662494429e06d1aa2ff71d9ccfcd8119?s="
@@ -83,12 +83,12 @@ export default () => (
       </MainHeading>
       <IconsContainer>
         <IconGroup>
-          <GithubIcon bg={grayish}/>
-          <PhoneIcon bg={pinkish} text='Appointment' fontSize='15px'/>
+          <GithubIcon bg={grayish} to='https://github.com/robbywashere'/>
+          <PhoneIcon bg={pinkish} to='https://calendly.com/robby' text='Appointment' fontSize='15px'/>
         </IconGroup>
         <IconGroup>
-          <PaperclipIcon bg={blueish} text={'Resume'}/>
-          <CommentIcon bg={greenish} text={'Contact'}/>
+          <PaperclipIconLocal bg={blueish} to='/resume' text={'Resume'}/>
+          <CommentIconLocal bg={greenish} to='/contact' text={'Contact'}/>
         </IconGroup>
       </IconsContainer>
     </Container>

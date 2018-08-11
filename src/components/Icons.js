@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-import styled from  'styled-components';
+import styled, { css } from  'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 //import { fa } from '@fortawesome/free-regular-svg-icons'
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { defaultProps } from 'recompose';
 
 import { Github } from 'styled-icons/fa-brands/Github.cjs';
 import { Phone } from 'styled-icons/fa-solid/Phone.cjs';
 import { Paperclip } from 'styled-icons/fa-solid/Paperclip.cjs'
 import { Comment } from 'styled-icons/fa-solid/Comment.cjs'
+
+import GLink from 'gatsby-link';
 
 import { fontSize } from 'styled-system';
 
@@ -22,20 +25,40 @@ export const Icon1 = styled.div`
 
 const p = (name)=>(prop)=>prop[name];
 
-export const Square = styled.div`
+const SquareStyle = css`
   position: relative;
   width: ${p('size')};
   display: inline-block;
   vertical-align: middle;
+  color: inherit;
   height: ${p('size')};
   background: ${p('bg')};
   text-align: center;
   border-radius: 12%;
+  padding: 0;
+  transition: all .2s; 
+  &:hover {
+    transform: scale(1.07)
+  }
   svg {
     margin-top: 7px;
     width: ${p('iconSize')};
     height: ${p('iconSize')};
   }
+`;
+
+
+export const Square = styled.a.attrs({
+  rel: 'nofollow',
+  href: ({ to }) => to
+})` 
+  ${SquareStyle}
+`;
+
+export const GSquare = styled(GLink).attrs({
+  rel: 'nofollow'
+})` 
+  ${SquareStyle}
 `;
 
 const Text = styled.div`
@@ -48,63 +71,38 @@ const Text = styled.div`
 `
 
 export const Icon = ({
-  url,
+  to="#",
   bg='black', 
   fontSize= '16px', 
   size = '100px',
   iconSize = '70%',
+  text='???',
+  Link=Square,
+  i: Ico
 })=>(
-  <Square bg={ bg } iconSize={ iconSize } size={ size }>
-    { children() }
+  <Link bg={ bg } to={ to } iconSize={ iconSize } size={ size }>
+    <Ico />
     <Text fontSize={fontSize}>{ text }</Text>
-  </Square>
+  </Link>
 )
 
-export const GithubIcon = ({ 
-  url,
-  bg='black', 
-  fontSize= '16px', 
-  size = '100px',
-  iconSize = '70%',
-  text='Github',
-})=>(
-  <Square bg={ bg } iconSize={ iconSize } size={ size }>
-    <Github />
-    <Text fontSize={fontSize}>{ text }</Text>
-  </Square>
-)
 
-export const PaperclipIcon = ({
-  bg='black', 
-  fontSize= '16px', 
-  size = '100px', 
-  text='Paperclip' 
-})=>(
-  <Square bg={ bg } iconSize='65%' size={ size }>
-    <Paperclip/>
-    <Text fontSize={fontSize}>{ text }</Text>
-  </Square>
-)
-export const PhoneIcon = ({
-  bg='black', 
-  fontSize= '16px', 
-  size = '100px', 
-  text='Phone' 
-})=>(
-  <Square bg={ bg } iconSize='65%' size={ size }>
-    <Phone/>
-    <Text fontSize={fontSize}>{ text }</Text>
-  </Square>
-)
-export const CommentIcon = ({
-  bg='black', 
-  fontSize= '16px', 
-  size = '100px', 
-  text='Comment' 
-})=>(
-  <Square bg={ bg } iconSize='67%' size={ size }>
-    <Comment style={{ marginLeft: '5px' }}/>
-    <Text fontSize={fontSize}>{ text }</Text>
-  </Square>
-)
+const IcoFactory = (ico, Link = Square ) => defaultProps({ text: ico.displayName, i: ico, Link })(Icon);
+
+export const GithubIcon = IcoFactory(Github);
+
+export const GithubIconLocal = IcoFactory(Github, GSquare);
+
+export const PaperclipIcon = IcoFactory(Paperclip);
+
+export const PaperclipIconLocal = IcoFactory(Paperclip, GSquare);
+
+export const PhoneIcon = IcoFactory(Phone);
+
+export const PhoneIconLocal = IcoFactory(Phone, GSquare);
+
+export const CommentIcon = ()=> IcoFactory(Comment);
+
+export const CommentIconLocal = IcoFactory(Comment, GSquare);
+
 

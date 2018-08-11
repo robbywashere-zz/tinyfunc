@@ -9,27 +9,31 @@ import styled from 'styled-components';
 import media from '../styles/media';
 
 
-const tableColor = "#F5F5F5";
+const tcolor = "#F5F5F5";
 
-const horizNav = `
-  ul:first-of-type {  
-    margin-left: 0;
-    padding-left: 0;
-    & > li {
-      display: inline-block;
-      &:nth-child(n+2) { 
-        margin-left: 2em;
-      }
-    }
-}`;
+
+
+const horizNav = 
+  `ul:first-of-type {  
+        margin-left: 0;
+        padding-left: 0;
+           & > li {
+              display: inline-block;
+              &:nth-child(n+2) { 
+                margin-left: 2em;
+              }
+           }
+      }`;
 
 const Body = styled.div`
 
   //Responsive 'Nav' 
+  
+  ${media.greaterThan('medium')`${horizNav}`}
 
-  ${media.greaterThan('medium')(horizNav)}
-
-  @media print { ${horizNav} }
+  @media print {
+    ${horizNav}
+  }
 
   -webkit-print-color-adjust: exact;
   margin: 0 auto;
@@ -77,10 +81,10 @@ const Body = styled.div`
     }
   }
   tr:nth-child(odd) {
-    background: ${tableColor};
+    background: ${tcolor};
   }
   tr:last-child {
-    border-bottom: 5px solid ${tableColor};
+    border-bottom: 5px solid ${tcolor};
   }
 `
 

@@ -18,6 +18,7 @@
     "find-free-port": "^2.0.0",
     "gatsby": "^1.9.277",
     "gatsby-link": "^1.6.46",
+    "gatsby-plugin-favicon": "^3.1.2",
     "gatsby-plugin-google-fonts": "^0.0.4",
     "gatsby-plugin-react-helmet": "^2.0.11",
     "gatsby-plugin-react-next": "^1.0.11",
@@ -54,7 +55,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "resume:hot": "nodemon -w src -e \"js ts md jsx\"  scripts/printresumepdf.js",
     "resume:once": "gatsby build && node scripts/onceresume.js",
-    "favicon": "qlmanage -t -s 1500 -o ./src/img ./src/img/logo.svg"
+    "favicon": "qlmanage -t -s 1500 -o ./static/img ./src/img/logo.svg"
   },
   "devDependencies": {
     "prettier": "^1.13.7"
