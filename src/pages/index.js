@@ -50,6 +50,9 @@ const MainHeading = Heading.extend`
 const IconsContainer = styled.div`
  display: inline-block; 
  text-align: center;
+  ${media.lessThan('medium')` text-align: left; width: 240px; `}
+  ${media.greaterThan('medium')` text-align: left; width: 480px; `}
+  ${media.greaterThan('large')` text-align: left; width: inherit; `}
 `;
 
 const IconGroup = styled.div`
@@ -59,6 +62,7 @@ const IconGroup = styled.div`
     display: inline-block;
     margin: 10px 10px 10px 10px;
   }
+
 
 `;
 
@@ -78,9 +82,6 @@ const IconGroup = styled.div`
       </IconsContainer>
       */
 
-const SpecialIconGroup = IconGroup.extend`
-  ${media.lessThan('medium')` text-align: left; width: 240px; `}
-`
 
 export default () => (
   <div>
@@ -100,10 +101,10 @@ export default () => (
           <PaperclipIconLocal bg={themeGet('gradients.blueish')} to='/resume' text='Resume'/>
           <CommentIconLocal bg={themeGet('gradients.greenish')} to='/contact' text='Contact'/>
         </IconGroup>
-        <SpecialIconGroup>
+        <IconGroup>
           <CodeIconLocal 
             bg={themeGet('gradients.peachish')} to='/blog' text='Code Blog'/>
-        </SpecialIconGroup>
+        </IconGroup>
       </IconsContainer>
     </Container>
   </div>

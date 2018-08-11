@@ -39,7 +39,7 @@ margin: 0 auto;
 padding: 0px 1.0875rem 1.45rem;
 padding-top: 0;
 font-size: 1em;
-font-weight: lighter;
+font-weight: medium;
 
 // Hide early experience
 ul:nth-of-type(n+6) {
