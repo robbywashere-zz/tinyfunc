@@ -9,7 +9,11 @@ template: resume
 
 # Web Application Engineer
 
-[robby.polana@gmail.com](mailto:robby.polana@gmail.com) • [github.com/robbywashere](https://github.com/robbywashere) • [pdf](https://tinyfunc.com/Robert_Polana_-_Web_Application_Engineer.pdf) • [view source](https://github.com/robbywashere/tinyfunc/blob/master/src/markdown-pages/resume.md)
+- [tinyfunc.com](https://tinyfunc.com)
+- [robby.polana@gmail.com](mailto:robby.polana@gmail.com) 
+- [github.com/robbywashere](https://github.com/robbywashere)
+- [resume.pdf](https://tinyfunc.com/Robert_Polana_-_Web_Application_Engineer.pdf)
+- [view source](https://github.com/robbywashere/tinyfunc/blob/master/src/markdown-pages/resume.md)
 
 **Debugging, refactoring, testing, grepping, console.logging, awking, acking, regularly expressioning, parsing, bashing, piping, patching, migrating, compiling, transpiling, requesting, reviewing, committing and _safely_ rebasing my way through life while resisting the brazen impulse of pushing directly to prod.**
 
@@ -24,7 +28,7 @@ template: resume
 | **State:**     | GraphQL          | Redux         | REST              | oauth + jwt + sessions    | single-page-app architecture |
 | **Workflow:**  | tdd              | git           | tcb               | testing, testing, testing |
 | **Front End:** | ReactJS          | AngularJS     | d3                | semantic-ui               | bootstrap                    |
-| **Back End:**  | NodeJS + Express | Ruby on Rails | Django            |                           |
+| **Back End:**  | NodeJS + Express | Ruby on Rails | Django                                       
 
 ## Experience
 

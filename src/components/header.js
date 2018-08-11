@@ -10,11 +10,14 @@ const H = Heading.extend`
   margin: 0 auto;
   font-weight: 100;
   padding: 0.5em;
+`
+
+const ArrowHead = H.extend`
   &:after {
     content: ' ⇒';
-    color: #FFF;
+    color: ${g('theme.colors.textLight')};
   }
-`
+  `
 
 const Link = styled(GLink)`
   text-decoration: none;
@@ -22,13 +25,13 @@ const Link = styled(GLink)`
 `
 
 const Header = ({ siteTitle, theme }) => (
-  <H is="h1">
+  <ArrowHead is="h1">
       <Link
         to="/"
       >
         {siteTitle}
       </Link>
-  </H>
+  </ArrowHead>
 )
 
 export default Header

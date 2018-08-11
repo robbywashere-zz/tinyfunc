@@ -3,57 +3,88 @@ import PropTypes from 'prop-types'
 import { injectGlobal } from 'styled-components'
 import Header from '../components/header'
 import { Provider }  from 'rebass';
-import theme from '../theme';
+import theme from '../styles/theme';
 import '../styles/global';
-
-//import './index.css'
-
 import styled from 'styled-components';
+import media from '../styles/media';
 
 
-const tcolor = "#F5F5F5";
+const tableColor = "#F5F5F5";
+
+const horizNav = `
+  ul:first-of-type {  
+    margin-left: 0;
+    padding-left: 0;
+    & > li {
+      display: inline-block;
+      &:nth-child(n+2) { 
+        margin-left: 2em;
+      }
+    }
+}`;
 
 const Body = styled.div`
+
+  //Responsive 'Nav' 
+
+  ${media.greaterThan('medium')(horizNav)}
+
+  @media print { ${horizNav} }
 
   -webkit-print-color-adjust: exact;
   margin: 0 auto;
   padding: 0px 1.0875rem 1.45rem;
   padding-top: 0;
   font-size: 1em;
-  font-weight: 300;
+  font-weight: lighter;
+
+  // Hide early experience
+  ul:nth-of-type(n+6) {
+    display: none;
+  }
+
   h3 {
     text-decoration: underline;
   }
   strong {
     font-weight: 500;
   }
-  ul:nth-of-type(n+5) {
-    display: none;
+  strong {
+    font-weight: bold;
   }
+
+  //skills table
   table {
     border-collapse: collapse;
   }
   td {
     padding: 0.5em 1em 0.5em 1em;
-
-  }
-
-  strong {
-    font-weight: bold;
-  }
-  thead {
-    display: none;
+      ${media.lessThan('medium')`
+        @media screen {
+          display: inline-block;
+          padding: 0.25em 0 0.25em 0;
+          &:after {
+            content: ",";
+          }
+          &:first-of-type:after {
+            content: "";
+          }
+          &:last-of-type:after {
+            content: "";
+          }
+        }
+      `}
+    }
   }
   tr:nth-child(odd) {
-    background: ${tcolor};
+    background: ${tableColor};
   }
   tr:last-child {
-    border-bottom: 2px solid ${tcolor};
+    border-bottom: 5px solid ${tableColor};
   }
 `
 
 export default ({ children, data }) => (
-
   <Provider theme={ theme }>
     <div>
       <Body>
@@ -66,7 +97,6 @@ export default ({ children, data }) => (
 
 export const query = graphql`
   query ResumeSiteTitleQuery {
-
     markdownRemark {
       frontmatter {
         title

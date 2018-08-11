@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import { injectGlobal } from 'styled-components'
 import Header from '../components/header'
 import { Provider }  from 'rebass';
-import theme from '../theme';
+import theme from '../styles/theme';
 import './index.css'
 
 import styled from 'styled-components';
