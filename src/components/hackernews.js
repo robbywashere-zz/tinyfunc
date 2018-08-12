@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import { Base, Heading } from 'rebass';
 import styled from 'styled-components';
 import { themeGet, bg, color } from 'styled-system';
 import axios from 'axios';

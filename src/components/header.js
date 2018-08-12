@@ -1,11 +1,9 @@
 import React from 'react'
 import GLink from 'gatsby-link'
-import { Base, Heading } from 'rebass';
 import styled from 'styled-components';
 import g from '../lib/get';
-import tri from '../img/tri.svg';
 
-const H = Heading.extend`
+const H = styled.h1`
   background-color: ${g('theme.colors.primary')};
   margin: 0 auto;
   font-weight: 100;
@@ -25,7 +23,7 @@ const Link = styled(GLink)`
 `
 
 const Header = ({ siteTitle, theme }) => (
-  <ArrowHead is="h1">
+  <ArrowHead>
       <Link
         to="/"
       >
@@ -35,3 +33,5 @@ const Header = ({ siteTitle, theme }) => (
 )
 
 export default Header
+
+

@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
 import styled, { css } from  'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-//import { fa } from '@fortawesome/free-regular-svg-icons'
-import { faPhone } from '@fortawesome/free-solid-svg-icons'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { defaultProps } from 'recompose';
 
 import { Github } from 'styled-icons/fa-brands/Github.cjs';
