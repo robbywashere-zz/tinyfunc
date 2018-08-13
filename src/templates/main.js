@@ -20,6 +20,13 @@ export default function MainTemplate({
 
 export const pageQuery = graphql`
   query MainTemplate($path: String!) {
+    site {
+      siteMetadata {
+        title
+        calendly
+        github
+      }
+    }
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
