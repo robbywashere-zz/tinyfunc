@@ -25,7 +25,6 @@ const Container = Banner.extend`
   min-height: 650px;
   ${media.lessThan('small')`
     min-width: 320px;
-    min-height: 865px;
   `}
 
   left: 0;
@@ -64,10 +63,9 @@ const IcoGrid = styled.div`
 
   grid-template-columns: repeat(3, 100px);
 
-  grid-gap: 10px;
+  grid-gap: 20px;
 
   ${media.lessThan('small')` 
-    margin-top: -2em;
     transform: scale(0.75)`
   }
 
