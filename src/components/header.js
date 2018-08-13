@@ -7,7 +7,7 @@ const H = styled.h1`
   background-color: ${g('theme.colors.primary')};
   margin: 0 auto;
   font-weight: 100;
-  padding: 0.5em;
+  padding: 0.25em 0 0.25em 0.5em;
 `
 
 const ArrowHead = H.extend`

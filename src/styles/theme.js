@@ -1,13 +1,13 @@
 
 export default { 
-  breakpoints: [ '32em', '48em', '64em', '80em' ],
+  breakpoints: [ '576px', '768px', '992px', '1200px' ],
   space: [ 0, 4, 8, 16, 32, 64, 128 ],
   fontSizes: [ 12, 14, 16, 20, 24, 32, 48, 64, 72, 96 ],
   fontWeights: { normal: 200, bold: 400 },
   fonts:
   { 
-    sans: '"Helvetica Neue", "San Francisco", Helvetica, Arial, sans-serif',
-    mono: '"SF Mono", Menlo, monospace' },
+    sans: 'Helvetica, Arial, sans-serif',
+    mono: 'Menlo, monospace' },
   colors:
   { 
     black: '#000',

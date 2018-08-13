@@ -5,6 +5,7 @@ import { fontSize, themeGet } from "styled-system";
 import { CommentIconLocal, PaperclipIconLocal, CodeIconLocal, PhoneIcon, GithubIcon } from "../components/Icons";
 import media from '../styles/media';
 
+//https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Mastering_Wrapping_of_Flex_Items
 const Me = Avatar.extend``;
 
 const blinkAnimation = ({speed=1})=>`animation: ${keyframes`
@@ -50,9 +51,13 @@ const MainHeading = Heading.extend`
 const IconsContainer = styled.div`
  display: inline-block; 
  text-align: center;
-  ${media.lessThan('medium')` text-align: left; width: 240px; `}
-  ${media.greaterThan('medium')` text-align: left; width: 480px; `}
-  ${media.greaterThan('large')` text-align: left; width: inherit; `}
+  ${media.lessThan('small')` 
+    margin-top: -2em;
+    text-align: left; 
+    width: 360px; 
+    transform: scale(0.75)`}
+
+  ${media.greaterThan('medium')` text-align: left; `}
 `;
 
 const IconGroup = styled.div`
@@ -65,22 +70,6 @@ const IconGroup = styled.div`
 
 
 `;
-
-/*
-      <IconsContainer>
-        <IconGroup>
-          <GithubIcon bg={themeGet('gradients.grayish')} to='https://github.com/robbywashere' text='Github'/>
-          <PhoneIcon bg={themeGet('gradients.pinkish')} to='https://calendly.com/robby' text='Appointment' fontSize='15px'/>
-        </IconGroup>
-        <IconGroup>
-          <PaperclipIconLocal bg={themeGet('gradients.blueish')} to='/resume' text='Resume'/>
-          <CommentIconLocal bg={themeGet('gradients.greenish')} to='/contact' text='Contact'/>
-        </IconGroup>
-        <IconGroup >
-          <CodeIconLocal bg={themeGet('gradients.peachish')} to='/blog' text='Code Blog'/>
-        </IconGroup>
-      </IconsContainer>
-      */
 
 
 export default () => (
@@ -96,12 +85,10 @@ export default () => (
         <IconGroup>
           <GithubIcon bg={themeGet('gradients.grayish')} to='https://github.com/robbywashere' text='Github'/>
           <PhoneIcon bg={themeGet('gradients.pinkish')} to='https://calendly.com/robby' text='Appointment' fontSize='15px'/>
-        </IconGroup>
-        <IconGroup>
           <PaperclipIconLocal bg={themeGet('gradients.blueish')} to='/resume' text='Resume'/>
-          <CommentIconLocal bg={themeGet('gradients.greenish')} to='/contact' text='Contact'/>
         </IconGroup>
         <IconGroup>
+          <CommentIconLocal bg={themeGet('gradients.greenish')} to='/contact' text='Contact'/>
           <CodeIconLocal 
             bg={themeGet('gradients.peachish')} to='/blog' text='Code Blog'/>
         </IconGroup>
