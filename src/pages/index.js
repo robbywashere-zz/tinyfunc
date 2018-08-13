@@ -48,28 +48,37 @@ const MainHeading = Heading.extend`
   }
 `;
 
-const IconsContainer = styled.div`
- display: inline-block; 
- text-align: center;
-  ${media.lessThan('small')` 
-    margin-top: -2em;
-    text-align: left; 
-    width: 360px; 
-    transform: scale(0.75)`}
 
-  ${media.greaterThan('medium')` text-align: left; `}
-`;
 
-const IconGroup = styled.div`
+const IcoGrid = styled.div`
+
+
   text-align: center;
-  display: inline-block;
+
   & > * {
     display: inline-block;
-    margin: 10px 10px 10px 10px;
+    //margin: 0 10px 10px 10px;
   }
 
+  display: grid;
 
-`;
+  grid-template-columns: repeat(3, 100px);
+
+  grid-gap: 10px;
+
+  ${media.lessThan('small')` 
+    margin-top: -2em;
+    transform: scale(0.75)`
+  }
+
+  ${media.greaterThan('medium')` 
+    grid-template-columns: repeat(4, 100px);
+  `}
+  ${media.greaterThan('large')` 
+    grid-template-columns: repeat(5, 100px);
+  `}
+  
+`
 
 
 export default () => (
@@ -81,18 +90,14 @@ export default () => (
         fontSize={[ 4, 5 ]}>
         Hello World
       </MainHeading>
-      <IconsContainer>
-        <IconGroup>
+      <IcoGrid>
           <GithubIcon bg={themeGet('gradients.grayish')} to='https://github.com/robbywashere' text='Github'/>
           <PhoneIcon bg={themeGet('gradients.pinkish')} to='https://calendly.com/robby' text='Appointment' fontSize='15px'/>
           <PaperclipIconLocal bg={themeGet('gradients.blueish')} to='/resume' text='Resume'/>
-        </IconGroup>
-        <IconGroup>
           <CommentIconLocal bg={themeGet('gradients.greenish')} to='/contact' text='Contact'/>
           <CodeIconLocal 
             bg={themeGet('gradients.peachish')} to='/blog' text='Code Blog'/>
-        </IconGroup>
-      </IconsContainer>
+      </IcoGrid>
     </Container>
   </div>
 );
