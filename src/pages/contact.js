@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import Home from './index';
+import Home from '../components/Home';
 import Link, { push } from 'gatsby-link';
 import { Fixed, Modal, Heading } from 'rebass'; 
 import { lifecycle } from 'recompose';
 
 
-export default (props) => (
+export default ({ data: { site: { siteMetadata: { github, calendly } } } }) => (
   <React.Fragment>
-    <Home { ...props } />
+    <Home github={ github  } calendly={ calendly } />
     <ContactModal />
   </React.Fragment>
 );
