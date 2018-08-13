@@ -76,11 +76,19 @@ const IcoGrid = styled.div`
   ${media.greaterThan('large')` 
     grid-template-columns: repeat(5, 100px);
   `}
-  
+
 `
 
 
-export default () => (
+export default ({ 
+  data: {
+    site: {
+      siteMetadata: {
+        calendly, github
+      }
+    }
+  }
+}) => (
   <div>
     <Container>
       <Me size={ 240 } src={'/img/me250.jpg'} />
@@ -90,15 +98,26 @@ export default () => (
         Hello World
       </MainHeading>
       <IcoGrid>
-          <GithubIcon bg={themeGet('gradients.grayish')} to='https://github.com/robbywashere' text='Github'/>
-          <PhoneIcon bg={themeGet('gradients.pinkish')} to='https://calendly.com/robby' text='Appointment' fontSize='15px'/>
-          <PaperclipIconLocal bg={themeGet('gradients.blueish')} to='/resume' text='Resume'/>
-          <CommentIconLocal bg={themeGet('gradients.greenish')} to='/contact' text='Contact'/>
-          <CodeIconLocal 
-            bg={themeGet('gradients.peachish')} to='/blog' text='Code Blog'/>
+        <GithubIcon bg={themeGet('gradients.grayish')} to={ github } text='Github'/>
+        <PhoneIcon bg={themeGet('gradients.pinkish')} to={ calendly } text='Appointment' fontSize='15px'/>
+        <PaperclipIconLocal bg={themeGet('gradients.blueish')} to='/resume' text='Resume'/>
+        <CommentIconLocal bg={themeGet('gradients.greenish')} to='/contact' text='Contact'/>
+        <CodeIconLocal 
+          bg={themeGet('gradients.peachish')} to='/blog' text='Code Blog'/>
       </IcoGrid>
     </Container>
   </div>
 );
 
 
+export const query = graphql`
+  query HomeQuery {
+    site {
+      siteMetadata {
+        title
+        calendly
+        github
+      }
+    }
+  }
+`

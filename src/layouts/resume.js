@@ -9,9 +9,7 @@ import styled from 'styled-components';
 import media from '../styles/media';
 
 
-const tcolor = "#F5F5F5";
-
-
+const tableColor = "#F5F5F5";
 
 const horizNav = `
 ul:first-of-type {  
@@ -66,11 +64,16 @@ td {
       @media screen {
         display: inline-block;
         padding: 0.25em 0 0.25em 0;
+        margin-top: 0.175em;
+        margin-bottom: 0.175em;
         &:after {
-          content: ",";
+          content: ", ";
         }
         &:first-of-type:after {
           content: "";
+        }
+        &:nth-of-type(2):before {
+          content: " ";
         }
         &:last-of-type:after {
           content: "";
@@ -80,10 +83,10 @@ td {
   }
 }
 tr:nth-child(odd) {
-  background: ${tcolor};
+  background: ${tableColor};
 }
 tr:last-child {
-  border-bottom: 5px solid ${tcolor};
+  border-bottom: 5px solid ${tableColor};
 }
 `
 

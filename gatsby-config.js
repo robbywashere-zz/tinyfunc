@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: 'Tiny func',
+    calendly: 'https://calendly.com/robby-polana',
+    github: 'https://github.com/robbywashere',
   },
   plugins: [
     {

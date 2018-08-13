@@ -11,6 +11,8 @@
 ## Commands
 
 Resume Hot Reload: `npm start` and then `npm run resume:hot`
+
+
 Resume: `npm run resume:once` and then open it in `./static/<resume title>.pdf`
 
 
