@@ -64,7 +64,8 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
       createPage({
         path,
         layout: (layout || type),
-        component: resolve(`src/templates/${template || type}.js`),
+        component: resolve(`src/templates/main.js`),
+        //component: resolve(`src/templates/${template || type}.js`),
       })
     })
   }

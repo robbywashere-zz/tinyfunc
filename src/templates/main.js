@@ -18,13 +18,3 @@ export default function MainTemplate({
   );
 }
 
-export const pageQuery = graphql`
-  query Main($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
-      frontmatter {
-        title
-      }
-    }
-  }
-`;
