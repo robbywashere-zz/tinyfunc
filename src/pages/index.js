@@ -56,14 +56,14 @@ const IcoGrid = styled.div`
 
   & > * {
     display: inline-block;
-    //margin: 0 10px 10px 10px;
+    margin: 0 10px 10px 10px;
   }
 
   display: grid;
 
   grid-template-columns: repeat(3, 100px);
 
-  grid-gap: 20px;
+  grid-gap: 30px;
 
   ${media.lessThan('small')` 
     transform: scale(0.75)`
