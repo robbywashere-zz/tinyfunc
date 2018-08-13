@@ -46,7 +46,7 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
 
       if (typeof path === 'undefined')
         throw new Error(
-          'path must defined in frontmatter for node' +
+          'path must be defined in frontmatter for node' +
           JSON.stringify(node, null, 4)
         )
       if (path.substring(0, 1) !== '/')
@@ -58,7 +58,6 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
       const {
         layout,
         template,
-        title
       } = node.childMarkdownRemark.frontmatter
 
       createPage({

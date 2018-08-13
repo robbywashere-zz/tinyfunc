@@ -4,7 +4,6 @@ import { Box, Flex, Avatar, Banner, Heading } from "rebass";
 import { fontSize, themeGet } from "styled-system";
 import { CommentIconLocal, PaperclipIconLocal, CodeIconLocal, PhoneIcon, GithubIcon } from "../components/Icons";
 import media from '../styles/media';
-import { get } from '../lib/utils';
 
 //https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Mastering_Wrapping_of_Flex_Items
 const Me = Avatar.extend``;
@@ -81,30 +80,34 @@ const IcoGrid = styled.div`
 `
 
 
-export default (props) => {
-  const calendly = get(props,'data.site.siteMetadata.calendly','#');
-  const github = get(props,'data.site.siteMetadata.github','#');
-  return (
-    <div>
-      <Container>
-        <Me size={ 240 } src={'/img/me250.jpg'} />
-        <MainHeading
-          font='mono'
-          fontSize={[ 4, 5 ]}>
-          Hello World
-        </MainHeading>
-        <IcoGrid>
-          <GithubIcon bg={themeGet('gradients.grayish')} to={ github } text='Github'/>
-          <PhoneIcon bg={themeGet('gradients.pinkish')} to={ calendly } text='Appointment' fontSize='15px'/>
-          <PaperclipIconLocal bg={themeGet('gradients.blueish')} to='/resume' text='Resume'/>
-          <CommentIconLocal bg={themeGet('gradients.greenish')} to='/contact' text='Contact'/>
-          <CodeIconLocal 
-            bg={themeGet('gradients.peachish')} to='/blog' text='Code Blog'/>
-        </IcoGrid>
-      </Container>
-    </div>
-  )
-};
+export default ({ 
+  data: {
+    site: {
+      siteMetadata: {
+        calendly, github
+      }
+    }
+  }
+}) => (
+  <div>
+    <Container>
+      <Me size={ 240 } src={'/img/me250.jpg'} />
+      <MainHeading
+        font='mono'
+        fontSize={[ 4, 5 ]}>
+        Hello World
+      </MainHeading>
+      <IcoGrid>
+        <GithubIcon bg={themeGet('gradients.grayish')} to={ github } text='Github'/>
+        <PhoneIcon bg={themeGet('gradients.pinkish')} to={ calendly } text='Appointment' fontSize='15px'/>
+        <PaperclipIconLocal bg={themeGet('gradients.blueish')} to='/resume' text='Resume'/>
+        <CommentIconLocal bg={themeGet('gradients.greenish')} to='/contact' text='Contact'/>
+        <CodeIconLocal 
+          bg={themeGet('gradients.peachish')} to='/blog' text='Code Blog'/>
+      </IcoGrid>
+    </Container>
+  </div>
+)
 
 
 export const query = graphql`

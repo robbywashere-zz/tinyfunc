@@ -6,9 +6,9 @@ import { Fixed, Modal, Heading } from 'rebass';
 import { lifecycle } from 'recompose';
 
 
-export default () => (
+export default (props) => (
   <React.Fragment>
-    <Home/>
+    <Home { ...props } />
     <ContactModal />
   </React.Fragment>
 );
@@ -46,3 +46,15 @@ export class ContactModal  extends React.Component {
   }
 }
 
+
+export const query = graphql`
+  query ContactQuery {
+    site {
+      siteMetadata {
+        title
+        calendly
+        github
+      }
+    }
+  }
+`
