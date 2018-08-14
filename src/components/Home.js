@@ -25,7 +25,7 @@ const Container = Banner.extend`
   min-height: 650px;
   ${media.lessThan('small')`
     min-width: 320px;
-    min-height: 750px;
+    min-height: 600px;
   `} left: 0;
   right: 0;
   bottom: 0;
