@@ -1,7 +1,9 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-export default function MainTemplate({ data }) {
+export default function MainTemplate(props) {
+  console.log(props);
+  const { data } = props;
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
   return (

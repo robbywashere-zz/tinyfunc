@@ -19,15 +19,15 @@ template: main
 
 ## Skills
 
-|                |                  |               |                   |                           |                              |
-| -------------- | ---------------- | ------------- | ----------------- | ------------------------- | ---------------------------- |
+|                |                  |               |                   |                           |                              |          |
+| -------------- | ---------------- | ------------- | ----------------- | ------------------------- | ---------------------------- |----------|
 | **Languages:** | Javascript       | TypeScript    | Ruby              | Python                    | Go                           |
 | **Data:**      | PostgreSQL       | MySQL         | ORMs              | active-record             | NoSQL                        |
 | **Deploy:**    | docker           | AWS           | 12-factor-apps    | micro-services            | serverless                   |
 | **Style:**     | jsx              | jss           | styled-components | sass                      | css                          |
 | **State:**     | GraphQL          | Redux         | REST              | oauth + jwt + sessions    | single-page-app architecture |
 | **Workflow:**  | tdd              | git           | tcb               | testing, testing, testing |
-| **Front End:** | ReactJS          | AngularJS     | d3                | semantic-ui               | bootstrap                    |
+| **Front End:** | ReactJS          | AngularJS     | GatsbyJS          |  d3                       | Semantic-UI                  | Bootstrap |
 | **Back End:**  | NodeJS + Express | Ruby on Rails | Django                                       
 
 ## Experience

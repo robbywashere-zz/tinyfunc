@@ -97,17 +97,3 @@ export default ({ children, data }) => (
   </Provider>
 )
 
-export const query = graphql`
-  query ResumeSiteTitleQuery {
-    markdownRemark {
-      frontmatter {
-        title
-      }
-    }
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`
