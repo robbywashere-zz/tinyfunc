@@ -1,8 +1,7 @@
 ---
-path: /testing
+title: test page 
 layout: resume
-template: main 
-title: Hello World 
----
+template: main
 
+---
 # Hello World 

@@ -1,8 +1,8 @@
 ---
-path: /resume
 title: Robert Polana - Web Application Engineer
 layout: resume
 template: main 
+
 ---
 
 # Robert Polana

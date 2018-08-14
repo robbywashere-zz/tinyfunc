@@ -5,67 +5,77 @@
  */
 
 const { resolve } = require('path')
+const { createFilePath } = require(`gatsby-source-filesystem`);
+const { get } = require('lodash');
 
 exports.modifyBabelrc = ({ babelrc }) => ({
   ...babelrc,
   plugins: babelrc.plugins.concat(
-    ['transform-regenerator'],
-    ['transform-runtime']
+    []
+    //   ['transform-regenerator'],
+    //   ['transform-runtime']
   ),
 })
 
 exports.createPages = async ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators
 
-  await pages('posts');
-  await pages('markdown');
-
-  async function pages(type) {
-    const pagesResults = await graphql(`
+  const pagesResults = await graphql(`
     {
-      allFile(filter: { sourceInstanceName: { eq: "${type}-pages" } }) {
+      allMarkdownRemark(limit: 1000) {
         edges {
           node {
-            childMarkdownRemark {
-              frontmatter {
+            id
+            fields {
+              slug
+            }
+            frontmatter {
                 path
                 layout
                 template
-              }
             }
           }
         }
       }
     }
-  `)
+    `);
 
-    if (pagesResults.errors) throw pagesResults.errors
 
-    pagesResults.data.allFile.edges.forEach(({ node }) => {
-      const { path } = node.childMarkdownRemark.frontmatter
+  if (pagesResults.errors) throw pagesResults.errors
 
-      if (typeof path === 'undefined')
-        throw new Error(
-          'path must be defined in frontmatter for node' +
-          JSON.stringify(node, null, 4)
-        )
-      if (path.substring(0, 1) !== '/')
-        throw new Error(
-          'path must be prefixed in frontmatter with "/"' +
-          JSON.stringify(node, null, 4)
-        )
+  pagesResults.data.allMarkdownRemark.edges.forEach(({ node }) => {
 
-      const {
-        layout,
-        template,
-      } = node.childMarkdownRemark.frontmatter
+    const {
+      id,
+      frontmatter: { layout, template, path },
+      fields: { slug }
+    } = node;
 
-      createPage({
-        path,
-        layout: (layout || type),
-        component: resolve(`src/templates/main.js`),
-        //component: resolve(`src/templates/${template || type}.js`),
-      })
+    console.log(id);
+
+    createPage({
+      path: path || slug,
+      layout: layout,
+      component: resolve(`src/templates/${template || 'main'}.js`),
+      context: {
+        id
+      }
+    })
+  })
+
+
+}
+
+
+exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
+  const { createNodeField } = boundActionCreators
+
+  if (node.internal.type === `MarkdownRemark`) {
+    const value = createFilePath({ node, getNode })
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
     })
   }
 }

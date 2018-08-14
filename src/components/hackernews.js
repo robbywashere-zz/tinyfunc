@@ -78,20 +78,22 @@ const Story = ({ title, score, host, age, rank, time, id, descendants, by })=>(
 
 const withHNStories = lifecycle({
   state: { stories: [] },
-  async componentDidMount(){
+  componentDidMount(){
     this.setState({ stories: STORIES });
     return;
     const hnapi = 'https://hacker-news.firebaseio.com/v0/';
-    const storyIds = await axios.get(`${hnapi}topstories.json`).then(({ data })=>data.slice(0,10))
-    const stories = (await Promise.all(storyIds.map(id => axios.get(`${hnapi}item/${id}.json`).then(r=>r.data)))).map(story => {
-      const { time, url: storyUrl  } = story;
-      const now = new Date().getTime();
-      story.age = timeago(now).format(time * 1000);
-      story.host = url.parse(storyUrl).host;
-      return story;
-    })
-
-    this.setState({ stories });
+    axios.get(`${hnapi}topstories.json`).then(({ data })=>data.slice(0,10)).then((storyIds)=>
+      Promise.all(storyIds.map(id => axios.get(`${hnapi}item/${id}.json`))).then(({ data })=>{
+        const stories = data.map(story => {
+          const { time, url: storyUrl  } = story;
+          const now = new Date().getTime();
+          story.age = timeago(now).format(time * 1000);
+          story.host = url.parse(storyUrl).host;
+          return story;
+        })
+        this.setState({ stories });
+      })
+    )
   }
 });
 

@@ -19,7 +19,7 @@ export default function MainTemplate({
 }
 
 export const pageQuery = graphql`
-  query MainTemplate($path: String!) {
+  query MainTemplate($id: String!) {
     site {
       siteMetadata {
         title
@@ -27,7 +27,7 @@ export const pageQuery = graphql`
         github
       }
     }
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+    markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
         title
