@@ -1,6 +1,6 @@
 import { injectGlobal } from 'styled-components'
-import { g } from '../lib/utils';
-import theme from '../styles/theme';
+import { g } from '../lib/utils'
+import theme from '../styles/theme'
 injectGlobal`
   * { box-sizing: border-box; }
   html {

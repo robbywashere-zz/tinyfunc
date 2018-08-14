@@ -1,7 +1,7 @@
 import React from 'react'
 import GLink from 'gatsby-link'
-import styled from 'styled-components';
-import g from '../lib/get';
+import styled from 'styled-components'
+import g from '../lib/get'
 
 const H = styled.h1`
   background-color: ${g('theme.colors.primary')};
@@ -15,7 +15,7 @@ const ArrowHead = H.extend`
     content: ' ⇒';
     color: ${g('theme.colors.textLight')};
   }
-  `
+`
 
 const Link = styled(GLink)`
   text-decoration: none;
@@ -24,14 +24,8 @@ const Link = styled(GLink)`
 
 const Header = ({ siteTitle, theme }) => (
   <ArrowHead>
-      <Link
-        to="/"
-      >
-        {siteTitle}
-      </Link>
+    <Link to="/">{siteTitle}</Link>
   </ArrowHead>
 )
 
 export default Header
-
-

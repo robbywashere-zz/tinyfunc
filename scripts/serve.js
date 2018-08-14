@@ -13,7 +13,13 @@ const { EventEmitter } = require('events');
 const express = require('express');
 
 if (require.main === module) {
-  yougotserved().then(console.log)
+  const events = new EventEmitter();
+  events.on('server:start',({ port })=> {
+    console.log(`Server listening on ${port}`)
+    console.log(`http://127.0.0.1:${port}`)
+  
+  });
+  yougotserved({ events });
 } 
 
 async function yougotserved({ path = defaultpath, port = 8001, events = (new EventEmitter()) }){ 
@@ -31,7 +37,7 @@ async function yougotserved({ path = defaultpath, port = 8001, events = (new Eve
   })
 
   const server = app.listen(fport, (err) => { 
-    if (err)  events.emit('error',err);
+    if (err) events.emit('error',err);
     events.emit('server:start', { port: fport });
   });
 

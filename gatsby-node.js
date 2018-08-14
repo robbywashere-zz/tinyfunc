@@ -51,7 +51,6 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
       fields: { slug }
     } = node;
 
-    console.log(id);
 
     createPage({
       path: path || slug,

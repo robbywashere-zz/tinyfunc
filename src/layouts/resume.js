@@ -2,14 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { injectGlobal } from 'styled-components'
 import Header from '../components/header'
-import { Provider }  from 'rebass';
-import theme from '../styles/theme';
-import '../styles/global';
-import styled from 'styled-components';
-import media from '../styles/media';
+import { Provider } from 'rebass'
+import theme from '../styles/theme'
+import '../styles/global'
+import styled from 'styled-components'
+import media from '../styles/media'
 
-
-const tableColor = "#F5F5F5";
+const tableColor = '#F5F5F5'
 
 const horizNav = `
 ul:first-of-type {  
@@ -21,7 +20,7 @@ ul:first-of-type {
           margin-left: 2em;
         }
      }
-}`;
+}`
 
 const Body = styled.div`
 //Responsive 'Nav' 
@@ -91,15 +90,12 @@ tr:last-child {
 `
 
 export default ({ children, data }) => (
-  <Provider theme={ theme }>
+  <Provider theme={theme}>
     <div>
-      <Body>
-        {children()}
-      </Body>
+      <Body>{children()}</Body>
     </div>
   </Provider>
 )
-
 
 export const query = graphql`
   query ResumeSiteTitleQuery {
@@ -113,6 +109,5 @@ export const query = graphql`
         title
       }
     }
-
   }
 `

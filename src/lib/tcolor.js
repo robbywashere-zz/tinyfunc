@@ -1,1 +1,1 @@
-export default (name)=>({ theme: { colors }})=>colors[name];
+export default name => ({ theme: { colors } }) => colors[name]
