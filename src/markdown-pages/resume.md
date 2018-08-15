@@ -38,7 +38,7 @@ template: main
 
 - Mentored, tutored and evangelized new technologies and practices for a modern stack solution to meet enterprise level requirements, such as scalability, access control, auditing and security.
 
-- Triaged created and managed issues/tasks with our offshore development team.
+- Triaged, created and managed issues/tasks with our offshore development team.
 
 - Traveled on-site to meet with clients to determine project requirements and deliverables
 
