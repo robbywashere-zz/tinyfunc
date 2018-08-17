@@ -27,7 +27,7 @@ template: main
 | **Style:**     | jsx              | jss           | styled-components | sass                      | css                          |
 | **State:**     | GraphQL          | Redux         | REST              | oauth + jwt + sessions    | single-page-app architecture |
 | **Workflow:**  | tdd              | git           | tcb               | testing, testing, testing |
-| **Front End:** | ReactJS          | AngularJS     | GatsbyJS          |  d3                       | Semantic-UI                  | Bootstrap |
+| **Front End:** | ReactJS          | AngularJS     | GatsbyJS          |  d3                       | bootstrap                    |
 | **Back End:**  | NodeJS + Express | Ruby on Rails | Django                                       
 
 ## Experience
