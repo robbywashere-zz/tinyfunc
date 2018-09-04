@@ -6,56 +6,67 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-favicon`,
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
-        logo: "./static/img/logo.svg.png",
+        trackingId: "UA-125173528-1",
+        // Puts tracking script in the head instead of the body
+        head: false,
+        // Setting this parameter is optional
+        anonymize: false,
+        // Setting this parameter is also optional
+        respectDNT: false,
+      },
+      {
+        resolve: `gatsby-plugin-favicon`,
+        options: {
+          logo: "./static/img/logo.svg.png",
 
-        // WebApp Manifest Configuration
-        appName: 'Tiny Func',
-        appDescription: null,
-        developerName: null,
-        developerURL: null,
-        dir: 'auto',
-        lang: 'en-US',
-        background: '#fff',
-        theme_color: '#fff',
-        display: 'standalone',
-        orientation: 'any',
-        start_url: '/',
-        version: '1.0',
+          // WebApp Manifest Configuration
+          appName: 'Tiny Func',
+          appDescription: null,
+          developerName: null,
+          developerURL: null,
+          dir: 'auto',
+          lang: 'en-US',
+          background: '#fff',
+          theme_color: '#fff',
+          display: 'standalone',
+          orientation: 'any',
+          start_url: '/',
+          version: '1.0',
 
-        icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: true,
-          coast: true,
-          favicons: true,
-          firefox: true,
-          opengraph: true,
-          twitter: true,
-          yandex: true,
-          windows: true
+          icons: {
+            android: true,
+            appleIcon: true,
+            appleStartup: true,
+            coast: true,
+            favicons: true,
+            firefox: true,
+            opengraph: true,
+            twitter: true,
+            yandex: true,
+            windows: true
+          }
         }
-      }
-    },
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-styled-components',
-    'gatsby-plugin-react-next',
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/pages/blog`,
-        name: 'blog',
       },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/markdown-pages`,
-        name: 'markdown-pages',
+      'gatsby-plugin-react-helmet',
+      'gatsby-plugin-styled-components',
+      'gatsby-plugin-react-next',
+      {
+        resolve: `gatsby-source-filesystem`,
+        options: {
+          path: `${__dirname}/src/pages/blog`,
+          name: 'blog',
+        },
       },
-    },
-    `gatsby-transformer-remark`,
-    'gatsby-plugin-remove-trailing-slashes',
-  ],
-}
+      {
+        resolve: `gatsby-source-filesystem`,
+        options: {
+          path: `${__dirname}/src/markdown-pages`,
+          name: 'markdown-pages',
+        },
+      },
+      `gatsby-transformer-remark`,
+      'gatsby-plugin-remove-trailing-slashes',
+    ],
+    }
