@@ -24,7 +24,7 @@ template: main
 | **Languages:** | Javascript       | TypeScript    | Ruby              | Python                    | Go                           |
 | **Data:**      | PostgreSQL       | MySQL         | ORMs              | active-record             | NoSQL                        |
 | **Deploy:**    | docker           | AWS           | 12-factor-apps    | micro-services            | serverless                   |
-| **Style:**     | jsx              | jss           | styled-components | sass                      | css                          |
+| **Markup:**     | jsx              | jss           | styled-components | sass                      | css                          |
 | **State:**     | GraphQL          | Redux         | REST              | oauth + jwt + sessions    | single-page-app architecture |
 | **Workflow:**  | tdd              | git           | tcb               | testing, testing, testing |
 | **Front End:** | ReactJS          | AngularJS     | GatsbyJS          |  d3                       | bootstrap                    |
@@ -42,7 +42,7 @@ template: main
 
 - Traveled on-site to meet with clients to determine project requirements and deliverables
 
-* **Technologies used: NodeJS+express, Postgres, ReactJS+Redux, Docker**
+* **Technologies used: NodeJS+express, React+Redux, GraphQL, Postgres**
 
 ### MustWin
 
@@ -56,7 +56,7 @@ template: main
 
 - Developed from the ground up using Go, a complete back-up and restore service for CassandraDB; a NoSQL distributed database.
 
-- **Technologies used: Go, Docker, AngularJS, CassandraDB, and Java**
+- **Technologies used: Go, AngularJS, Java, Docker, CassandraDB**
 
 ### Mimir Health Intelligence
 
@@ -68,7 +68,7 @@ template: main
 
 - Established software development cycle practices and processes - tracking of features / requirements, logging bugs, and outlining sprints
 
-- **Technologies used: AngularJS, NodeJS, Ruby On Rails, AWS**
+- **Technologies used: Ruby On Rails, AngularJS, NodeJS, AWS**
 
 ### Razorfish
 
@@ -80,7 +80,7 @@ template: main
 
 - Participated and assisted in conducting open monthly accessibility meet-ups to further accessibility perspective and encourage collaboration amongst the local developer community and their end users
 
-- **Technologies used: AngularJS, coffescript, sass, and css**
+- **Technologies used: AngularJS, Coffeescript, sass, and css**
 
 &mdash;
 
