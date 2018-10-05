@@ -36,6 +36,8 @@ template: main
 
 #### Technical Lead / October 2016 - November 2017
 
+- Designed and built enterprise level solutions to meet organizational standards, demands and workloads.
+
 - Mentored, tutored and evangelized new technologies and practices for a modern stack solution to meet enterprise level requirements, such as scalability, access control, auditing and security.
 
 - Triaged, created and managed issues/tasks with our offshore development team.
@@ -82,9 +84,9 @@ template: main
 
 - **Technologies used: AngularJS, Coffeescript, sass, and css**
 
-&mdash;
+### ShipStation 
 
-#### ShipStation - Senior Front-End Engineer / August 2013 - December 2013
+#### Senior Front-End Engineer / August 2013 - December 2013
 
 - Outlined and implemented the foundation for modular javascript front-end components and assets for a rebuild of an exceptionally complex and feature rich single page application.
 
@@ -96,7 +98,9 @@ template: main
 
 - **Technologies used: NodeJS, BackboneJS + Marionette, d3, Requirejs/AMD**
 
-#### Cooking Planit - Web Application Engineer / April 2012 - July 2012
+### Cooking Planit
+
+#### Web Application Engineer / April 2012 - July 2012
 
 - Contributed, refactored and developed the core basis of both the javascript enhanced front-end, while meeting the challenge to maintain a multi-device sharing restful back-end API.
 - Added value by refactoring SQL queries and data integrity of the application and structure of the database.
@@ -104,7 +108,9 @@ template: main
 
 - **Technologies used: PHP / LAMP Stack, BackboneJS, Javascript and MySQL**
 
-#### Spawn Labs - Web Service Engineer / August 2011 - December 2011
+### Spawn Labs 
+
+#### Web Service Engineer / August 2011 - December 2011
 
 - Solely authored a multi-node job scheduler and service to consolidate and process application usage data for client billing.
 - Utilized test driven development for crucial function as client-billing and usage statistics.
@@ -112,7 +118,9 @@ template: main
 
 - **Technologies used: Postgres, Python, Django, Java and Javascript**
 
-#### Fuery Solutions - Junior Developer / January 2011 - July 2011
+### Fuery Solutions 
+
+#### Junior Developer / January 2011 - July 2011
 
 - Took the lead with multiple client consulting for our web application development team.
 - Contributed pertinent code and functionality to our in house product; a full featured suite for law firms to manage their legal cases.
@@ -120,12 +128,13 @@ template: main
 
 - **Technologies used: Wordpress, Drupal, Perl, AWS, PHP / LAMP Stack and Javascript**
 
-#### Telefund - Database and Systems Administrator / March 2010 - November 2010
+### Telefund
+#### Database and Systems Administrator / March 2010 - November 2010
 
 - Coordinated tech-support and systems administration across 3 timezones and 4 different locations.
 
 - Took the lead and initiative in authoring scripts automating reporting and ETL (extract transform load) processes.
 
-- Triaged issues, various tasks and end-of-day reporting amongst IT team members and the occasional 'putting out a fire'
+- Coordinated and executed maintenance and repairs to essential IT company-wide infrastructure 
 
 - **Technologies used: Perl, MySql, Unix, bash**

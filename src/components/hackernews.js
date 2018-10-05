@@ -10,6 +10,7 @@ import { lighten } from 'polished'
 import url from 'url'
 import STORIES from './stories-fixture.json'
 import tcolor from '../lib/tcolor'
+import TimeAgo from 'timeago-react'; // var TimeAgo = require('timeago-react');
 
 const lightenUp = amt => colorFn => props => lighten(amt, colorFn(props))
 
@@ -60,7 +61,6 @@ const Story = ({
   title,
   score,
   host,
-  age,
   rank,
   time,
   id,
@@ -71,9 +71,11 @@ const Story = ({
     {rank}.
     <VArrow />
     {title}
-    <small> ({host}) </small>
+    <small> { host ? host : "" }</small>
     <StorySub>
-      {`${score} points by ${by} ${age} | hide | ${descendants} comments `}
+      {`${score} points by ${by} `} 
+      <TimeAgo datetime={(time)}/>
+      {` | hide | ${descendants} comments `}
     </StorySub>
   </StoryRanked>
 )
@@ -81,22 +83,22 @@ const Story = ({
 const withHNStories = lifecycle({
   state: { stories: [] },
   componentDidMount() {
-    this.setState({ stories: STORIES })
-    return
     const hnapi = 'https://hacker-news.firebaseio.com/v0/'
     axios
       .get(`${hnapi}topstories.json`)
       .then(({ data }) => data.slice(0, 10))
       .then(storyIds =>
         Promise.all(
-          storyIds.map(id => axios.get(`${hnapi}item/${id}.json`))
-        ).then(({ data }) => {
-          const stories = data.map(story => {
-            const { time, url: storyUrl } = story
-            const now = new Date().getTime()
-            story.age = timeago(now).format(time * 1000)
-            story.host = url.parse(storyUrl).host
-            return story
+          storyIds.map(id => axios.get(`${hnapi}item/${id}.json`).then(({ data }) => data ))
+        ).then(storyData => {
+          const stories = storyData.map(story => {
+            try {
+              story.time = new Date(story.time*1000); 
+              story.host = story.url ? url.parse(story.url).host : null;
+              return story
+            } catch(e) {
+              console.error(e);
+            }
           })
           this.setState({ stories })
         })

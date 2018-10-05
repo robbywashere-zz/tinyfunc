@@ -65,7 +65,7 @@ const Text = styled.div`
   ${fontSize};
 `
 
-export const Icon = ({
+export const Icon = styled(({
   to = '#',
   bg = 'black',
   fontSize = '16px',
@@ -79,7 +79,11 @@ export const Icon = ({
     <Ico />
     <Text fontSize={fontSize}>{text}</Text>
   </Link>
-)
+))`
+
+  display: inline-block;
+  margin: 0 10px 10px 10px;
+`
 
 const IcoFactory = (ico, Link = Square) =>
   defaultProps({ text: ico.displayName, i: ico, Link })(Icon)

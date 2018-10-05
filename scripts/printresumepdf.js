@@ -27,13 +27,13 @@ if (require.main === module) {
 
 
 async function printresume({ port = 8000, events = (new EventEmitter())}){
+    const resumeHTTP = `http://localhost:${port}/resume`;
   try {
     const resumeMdPath = path.join(__dirname, '..','src','markdown-pages','resume.md');
     const resumeMdStr = fs.readFileSync(resumeMdPath, 'utf8');
     const { data: { title } } = matter(resumeMdStr);
     const pdftitle = title.replace(/\s/g,'_')
     const resumePdfPath = path.join(__dirname, '..','static',`${pdftitle}.pdf`);
-    const resumeHTTP = `http://localhost:${port}/resume`;
 
     const browser = await puppeteer.launch();
 

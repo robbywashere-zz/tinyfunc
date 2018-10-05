@@ -30,6 +30,7 @@ export default {
     textDark: '#000',
     primary: 'rebeccapurple',
     secondary: '#67ee00',
+    bgLight: '#fff',
   },
   palette: {
     primary: 'rebeccapurple',

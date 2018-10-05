@@ -38,9 +38,9 @@ padding-top: 0;
 font-size: 1em;
 font-weight: medium;
 
-// Hide early experience
+//SHOW early experience
 ul:nth-of-type(n+6) {
-  display: none;
+  display: inherit;
 }
 
 h3 {
