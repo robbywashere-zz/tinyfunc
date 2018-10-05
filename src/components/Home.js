@@ -7,7 +7,6 @@ import Hackernews from '../components/hackernews';
 import media from '../styles/media'
 
 //https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Mastering_Wrapping_of_Flex_Items
-const Me = Avatar.extend``
 
 const blinkAnimation = ({ speed = 1 }) =>
   `animation: ${keyframes`
@@ -18,6 +17,7 @@ const blinkAnimation = ({ speed = 1 }) =>
 
 const SubHeading = Heading.extend`
   font-weight: 100;
+  padding: 1em;
 `
 const Container = Banner.extend`
   min-height: 650px;
@@ -78,7 +78,7 @@ export default ({ github, calendly }) => (
   <div>
     <div>
       <Hero>
-        <Me size={240} src={'/img/me250.jpg'} />
+        <Avatar size={240} src={'/img/me250.jpg'} />
         <MainHeading font="mono" fontSize={[4, 5]}>
           Hello World
         </MainHeading>
@@ -107,12 +107,11 @@ export default ({ github, calendly }) => (
         <SubHeading color='textDark'><em>Lets build something great together</em></SubHeading>
         <Hackernews myStory={{
           title: 'The greatest thing of all time', 
-          score: 1337, 
+          points: 1337, 
           host: 'nextbigthing.com', 
-          age: '1 hour ago',
-          time: Date.now(), 
-          descendants: 365, 
-          by: 'robbywashere'
+          time_ago: '1 hour ago',
+          comments_count: 365, 
+          user: 'robbywashere'
         }}>The Next Big Thing</Hackernews>
     </Container>
   </div>

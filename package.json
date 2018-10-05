@@ -46,7 +46,8 @@
     "styled-media-query": "^2.0.2",
     "timeago": "^1.6.3",
     "timeago-react": "^2.0.0",
-    "timeago.js": "^3.0.2"
+    "timeago.js": "^3.0.2",
+    "whatwg-fetch": "^3.0.0"
   },
   "keywords": [
     "gatsby"
